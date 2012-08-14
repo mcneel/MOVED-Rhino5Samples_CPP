@@ -286,7 +286,9 @@
     <ClCompile Include="cmdSampleBackgroundBitmap.cpp" />
     <ClCompile Include="cmdSampleCircle.cpp" />
     <ClCompile Include="cmdSampleClassifyCurve.cpp" />
+    <ClCompile Include="cmdSampleCone.cpp" />
     <ClCompile Include="cmdSampleCurvature.cpp" />
+    <ClCompile Include="cmdSampleCylinder.cpp" />
     <ClCompile Include="cmdSampleDisplayPrecision.cpp" />
     <ClCompile Include="cmdSampleDrawString.cpp" />
     <ClCompile Include="cmdSampleDumpBlockTree.cpp" />
@@ -306,6 +308,7 @@
     <ClCompile Include="cmdSamplePointsDeviation.cpp" />
     <ClCompile Include="cmdSamplePolyline.cpp" />
     <ClCompile Include="cmdSamplePtFromCrvStart.cpp" />
+    <ClCompile Include="cmdSampleSphere.cpp" />
     <ClCompile Include="cmdSampleSplitBrep.cpp" />
     <ClCompile Include="cmdSampleSplitCurve.cpp" />
     <ClCompile Include="cmdSampleSubCrvLength.cpp" />

@@ -282,10 +282,12 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cmdSampleBlockView.cpp" />
     <ClCompile Include="cmdSampleModalDialog.cpp" />
     <ClCompile Include="cmdSampleCirclePreview.cpp" />
     <ClCompile Include="cmdSampleModelessDialog.cpp" />
     <ClCompile Include="cmdSampleSelectFiles.cpp" />
+    <ClCompile Include="SampleBlockViewDialog.cpp" />
     <ClCompile Include="SampleDialogsApp.cpp" />
     <ClCompile Include="SampleDialogsPlugIn.cpp" />
     <ClCompile Include="SampleModalDialog.cpp" />
@@ -302,6 +304,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SampleBlockViewDialog.h" />
     <ClInclude Include="SampleDialogsApp.h" />
     <ClInclude Include="SampleDialogsPlugIn.h" />
     <ClInclude Include="SampleModalDialog.h" />

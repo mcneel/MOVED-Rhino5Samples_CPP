@@ -2,6 +2,8 @@
 // Microsoft Visual C++ generated include file.
 // Used by SampleDialogs.rc
 //
+#define IDC_LISTBOX                     6000
+#define IDD_BLOCKVIEW_DIALOG            6000
 #define IDD_MODAL_DIALOG                9002
 #define IDC_PREVIEW                     10000
 #define IDD_CIRCLEPREVIEW_DIALOG        10000

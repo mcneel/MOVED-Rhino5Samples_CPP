@@ -285,6 +285,7 @@
     <ClCompile Include="cmdSampleModalDialog.cpp" />
     <ClCompile Include="cmdSampleCirclePreview.cpp" />
     <ClCompile Include="cmdSampleModelessDialog.cpp" />
+    <ClCompile Include="cmdSampleSelectFiles.cpp" />
     <ClCompile Include="SampleDialogsApp.cpp" />
     <ClCompile Include="SampleDialogsPlugIn.cpp" />
     <ClCompile Include="SampleModalDialog.cpp" />

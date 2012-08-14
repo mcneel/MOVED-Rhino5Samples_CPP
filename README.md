@@ -13,9 +13,9 @@ To build the Rhino 5.0 C++ SDK Samples, you are going to need:
 
 Getting Help
 -------
-Rhino C++ SDK Knowledge Base (http://wiki.mcneel.com/developer/sdksamples/knowledgebasecpp)
-Rhino Plug-ins Support Newsgroup (NNTP) - (news://news.mcneel.com/rhino.plug-ins)
-E-mail Rhino Developer Support - (devsupport@mcneel.com)
+* Rhino C++ SDK Knowledge Base (http://wiki.mcneel.com/developer/sdksamples/knowledgebasecpp)
+* Rhino Plug-ins Support Newsgroup (NNTP) - (news://news.mcneel.com/rhino.plug-ins)
+* E-mail Rhino Developer Support - (devsupport@mcneel.com)
 
 Legal Stuff
 -----------

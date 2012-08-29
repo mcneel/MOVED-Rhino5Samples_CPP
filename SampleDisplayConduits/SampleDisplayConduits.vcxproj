@@ -282,6 +282,7 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cmdSampleCameraTracker.cpp" />
     <ClCompile Include="cmdSampleDrawBitmap.cpp" />
     <ClCompile Include="cmdSampleFalseColor.cpp" />
     <ClCompile Include="cmdSampleGrayscale.cpp" />

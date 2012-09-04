@@ -62,6 +62,8 @@ CSampleExportMeshPlugIn::CSampleExportMeshPlugIn()
 
   // TODO: Add construction code here
   m_plugin_version = RhinoPlugInVersion();
+
+  m_mesh_ui_style = 0; // 0 = simple dialog 
 }
 
 CSampleExportMeshPlugIn::~CSampleExportMeshPlugIn()

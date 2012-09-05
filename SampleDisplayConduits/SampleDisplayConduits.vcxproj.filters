@@ -48,6 +48,9 @@
     <ClCompile Include="cmdSampleCameraTracker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cmdSampleMeshFaceColor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleDisplayConduitsApp.h">

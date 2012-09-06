@@ -284,6 +284,7 @@
   <ItemGroup>
     <ClCompile Include="cmdSampleCameraTracker.cpp" />
     <ClCompile Include="cmdSampleDrawBitmap.cpp" />
+    <ClCompile Include="cmdSampleDrawColorMesh.cpp" />
     <ClCompile Include="cmdSampleFalseColor.cpp" />
     <ClCompile Include="cmdSampleGrayscale.cpp" />
     <ClCompile Include="cmdSampleHightlightCurve.cpp" />

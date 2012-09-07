@@ -284,11 +284,13 @@
   <ItemGroup>
     <ClCompile Include="cmdSample2View.cpp" />
     <ClCompile Include="cmdSampleAddLayout.cpp" />
+    <ClCompile Include="cmdSampleAnnotateCurveEndPoints.cpp" />
     <ClCompile Include="cmdSampleBackgroundBitmap.cpp" />
     <ClCompile Include="cmdSampleCircle.cpp" />
     <ClCompile Include="cmdSampleClassifyCurve.cpp" />
     <ClCompile Include="cmdSampleClosestAxisPoint.cpp" />
     <ClCompile Include="cmdSampleCone.cpp" />
+    <ClCompile Include="cmdSampleConvertQuadsToTriangles.cpp" />
     <ClCompile Include="cmdSampleCurvature.cpp" />
     <ClCompile Include="cmdSampleCustomMeshObjects.cpp" />
     <ClCompile Include="cmdSampleCylinder.cpp" />
@@ -301,6 +303,7 @@
     <ClCompile Include="cmdSampleExtractIsoCurve.cpp" />
     <ClCompile Include="cmdSampleFindCrvsOnSrf.cpp" />
     <ClCompile Include="cmdSampleGoldenRectangle.cpp" />
+    <ClCompile Include="cmdSampleGradeLine.cpp" />
     <ClCompile Include="cmdSampleHatch.cpp" />
     <ClCompile Include="cmdSampleInsert.cpp" />
     <ClCompile Include="cmdSampleInterpCurve.cpp" />
@@ -312,6 +315,7 @@
     <ClCompile Include="cmdSampleMakeBlock.cpp" />
     <ClCompile Include="cmdSampleMeshBooleanIntersection.cpp" />
     <ClCompile Include="cmdSampleMeshBoundary.cpp" />
+    <ClCompile Include="cmdSampleMeshDir.cpp" />
     <ClCompile Include="cmdSampleMeshLine.cpp" />
     <ClCompile Include="cmdSampleMeshPolysrf.cpp" />
     <ClCompile Include="cmdSampleMeshVolume.cpp" />

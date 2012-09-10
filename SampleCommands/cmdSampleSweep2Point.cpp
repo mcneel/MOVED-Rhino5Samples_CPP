@@ -107,7 +107,7 @@ static bool RhinoSweep2Helper(
   args.m_rail_pick_points[1] = ON_UNSET_POINT;
 
   bool bClosedRails = ( args.m_rail_curves[0]->IsClosed() && args.m_rail_curves[1]->IsClosed() );
-  if( bClosedRails && bClosedRails )
+  if( bClosedRails && bClosed )
     args.m_bClosed = bClosed;
 
   // Shapes

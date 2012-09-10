@@ -342,6 +342,7 @@
     <ClCompile Include="cmdSampleSurfaceNormal.cpp" />
     <ClCompile Include="cmdSampleSurfacePoints.cpp" />
     <ClCompile Include="cmdSampleSwapHatch.cpp" />
+    <ClCompile Include="cmdSampleSweep2Point.cpp" />
     <ClCompile Include="cmdSampleSyncRenderColors.cpp" />
     <ClCompile Include="cmdSampleTexture.cpp" />
     <ClCompile Include="cmdSampleTriangulatePolygon.cpp" />

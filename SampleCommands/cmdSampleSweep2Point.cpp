@@ -161,18 +161,18 @@ static bool RhinoSweep2Helper(
 class CCommandSampleSweep2Point : public CRhinoCommand
 {
 public:
-	CCommandSampleSweep2Point() {}
-	~CCommandSampleSweep2Point() {}
-	UUID CommandUUID()
-	{
-		// {28A4216-C489-41BE-95C4-67B6068C3314}
-		static const GUID SampleSweep2PointCommand_UUID =
-		{ 0x28A4216, 0xC489, 0x41BE, { 0x95, 0xC4, 0x67, 0xB6, 0x06, 0x8C, 0x33, 0x14 } };
-		return SampleSweep2PointCommand_UUID;
-	}
-	const wchar_t* EnglishCommandName() { return L"SampleSweep2Point"; }
-	const wchar_t* LocalCommandName() { return L"SampleSweep2Point"; }
-	CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
+  CCommandSampleSweep2Point() {}
+  ~CCommandSampleSweep2Point() {}
+  UUID CommandUUID()
+  {
+    // {28A4216-C489-41BE-95C4-67B6068C3314}
+    static const GUID SampleSweep2PointCommand_UUID =
+    { 0x28A4216, 0xC489, 0x41BE, { 0x95, 0xC4, 0x67, 0xB6, 0x06, 0x8C, 0x33, 0x14 } };
+    return SampleSweep2PointCommand_UUID;
+  }
+  const wchar_t* EnglishCommandName() { return L"SampleSweep2Point"; }
+  const wchar_t* LocalCommandName() { return L"SampleSweep2Point"; }
+  CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
 };
 
 // The one and only CCommandSampleSweep2Point object
@@ -271,7 +271,7 @@ CRhinoCommand::result CCommandSampleSweep2Point::RunCommand( const CRhinoCommand
     context.m_doc.Redraw();
   }
  
-  return success;
+  return CRhinoCommand::success;
 }
 
 //

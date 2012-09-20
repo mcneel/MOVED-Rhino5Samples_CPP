@@ -197,6 +197,24 @@ BOOL CSampleMenuPlugIn::OnPlugInMenuCommand( WPARAM wParam )
     }
     break;
 
+  case ID_MORE_SAMPLEMENUCOMMAND3:
+    {
+      if( m_bScriptMode )
+        RhinoApp().RunScript( L"! _-SampleMenuCommand3" );
+      else
+        RhinoApp().RunScript( L"! _SampleMenuCommand3" );
+    }
+    break;
+
+  case ID_MORE_SAMPLEMENUCOMMAND4:
+    {
+      if( m_bScriptMode )
+        RhinoApp().RunScript( L"! _-SampleMenuCommand4" );
+      else
+        RhinoApp().RunScript( L"! _SampleMenuCommand4" );
+    }
+    break;
+
   case ID_SAMPLEMENU_SCRIPTMODE:
     {
       if( m_bScriptMode )

@@ -105,6 +105,11 @@ BEGIN
     BEGIN
         MENUITEM "Sample Menu Command 1",       ID_SAMPLEMENU_SAMPLEMENUCOMMAND1
         MENUITEM "Sample Menu Command 2",       ID_SAMPLEMENU_SAMPLEMENUCOMMAND2
+        POPUP "More"
+        BEGIN
+            MENUITEM "Sample Menu Command 3",       ID_MORE_SAMPLEMENUCOMMAND3
+            MENUITEM "Sample Menu Command 4",       ID_MORE_SAMPLEMENUCOMMAND4
+        END
         MENUITEM SEPARATOR
         MENUITEM "Script Mode",                 ID_SAMPLEMENU_SCRIPTMODE
     END

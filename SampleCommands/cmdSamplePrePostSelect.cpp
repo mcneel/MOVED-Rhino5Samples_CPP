@@ -42,57 +42,50 @@ CRhinoCommand::result CCommandSamplePrePostSelect::RunCommand( const CRhinoComma
   int nValue = m_nValue;
 
   CRhinoGetObject go;
-  go.SetGeometryFilter(CRhinoGetObject::curve_object);
-  go.EnableGroupSelect(TRUE);
-  go.EnableSubObjectSelect(FALSE);
-  go.EnableClearObjectsOnEntry(false);
-  go.EnableUnselectObjectsOnExit(false);
-  go.EnableDeselectAllBeforePostSelect(false);
+  go.SetGeometryFilter( CRhinoGetObject::curve_object );
+  go.EnableGroupSelect( TRUE );
+  go.EnableSubObjectSelect( FALSE );
+
+  int d_option_index = go.AddCommandOptionNumber( 
+      RHCMDOPTNAME(L"Double"), &dValue, L"Double value", FALSE, 1.0, 99.9 );
+
+  int n_option_index = go.AddCommandOptionInteger( 
+      RHCMDOPTNAME(L"Integer"), &nValue, L"Integer value", 1, 99 );
 
   bool bHavePreselectedObjects = false;
 
-  for (; ; )
+  for( ;; )
   {
-    go.ClearCommandOptions();
+    CRhinoGet::result res = go.GetObjects( 1, 0 );
 
-    int d_option_index = go.AddCommandOptionNumber( 
-        RHCMDOPTNAME(L"Double"), &dValue, L"Double value", FALSE, 1.0, 99.9 );
-
-    int n_option_index = go.AddCommandOptionInteger( 
-        RHCMDOPTNAME(L"Integer"), &nValue, L"Integer value", 1, 99 );
-
-    CRhinoGet::result res = go.GetObjects(1, 0);
-
-    if (res == CRhinoGet::option)
+    if( res == CRhinoGet::option )
     {
-      const CRhinoCommandOption* option = go.Option();
-      if (0 != option)
-      {
-        int option_index = option->m_option_index;
-        if (option_index == d_option_index)
-          dValue = option->m_number_option_value;
-        else if (option_index == n_option_index)
-          dValue = (int)option->m_number_option_value;
-      }
-
-      go.EnablePreSelect(FALSE);
+      go.EnablePreSelect( FALSE );
+      go.EnableAlreadySelectedObjectSelect( true );
+      go.EnableClearObjectsOnEntry( false );
+      go.EnableDeselectAllBeforePostSelect( false );
+      go.EnableUnselectObjectsOnExit( false );
       continue;
     }
 
-    else if (res != CRhinoGet::object)
+    else if( res != CRhinoGet::object )
       return CRhinoCommand::cancel;
 
-    if (go.ObjectsWerePreSelected())
+    if( go.ObjectsWerePreSelected() )
     {
       bHavePreselectedObjects = true;
-      go.EnablePreSelect(FALSE);
+      go.EnablePreSelect( FALSE );
+      go.EnableAlreadySelectedObjectSelect( true );
+      go.EnableClearObjectsOnEntry( false );
+      go.EnableDeselectAllBeforePostSelect( false );
+      go.EnableUnselectObjectsOnExit( false );
       continue;
     }
 
     break;
   }
 
-  if (bHavePreselectedObjects)
+  if( bHavePreselectedObjects )
   {
     // Normally, pre-selected objects will remain selected, when a
     // command finishes, and post-selected objects will be unselected.
@@ -100,11 +93,11 @@ CRhinoCommand::result CCommandSamplePrePostSelect::RunCommand( const CRhinoComma
     // of pre-selected and post-selected. So, to make sure everything
     // "looks the same", lets unselect everything before finishing
     // the command.
-    for (int i = 0; i < go.ObjectCount(); i++)
+    for( int i = 0; i < go.ObjectCount(); i++ )
     {
       const CRhinoObject* object = go.Object(i).Object();
-      if (0 != object)
-        object->Select(false);
+      if( 0 != object )
+        object->Select( false );
     }
     context.m_doc.Redraw();
   }
@@ -113,9 +106,9 @@ CRhinoCommand::result CCommandSamplePrePostSelect::RunCommand( const CRhinoComma
   m_dValue = dValue;
   m_nValue = nValue;
 
-  RhinoApp().Print(L"Select object count = %d\n", object_count);
-  RhinoApp().Print(L"Value of double = %f\n", m_dValue);
-  RhinoApp().Print(L"Value of integer = %d\n", m_nValue);
+  RhinoApp().Print( L"Select object count = %d\n", object_count );
+  RhinoApp().Print( L"Value of double = %f\n", m_dValue );
+  RhinoApp().Print( L"Value of integer = %d\n", m_nValue );
 
   return CRhinoCommand::success;
 }

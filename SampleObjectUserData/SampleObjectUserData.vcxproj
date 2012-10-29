@@ -282,6 +282,7 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cmdSampleBrepFaceUserData.cpp" />
     <ClCompile Include="cmdSampleObjectUserData.cpp" />
     <ClCompile Include="SampleObjectUserDataApp.cpp" />
     <ClCompile Include="SampleObjectUserDataPlugIn.cpp" />

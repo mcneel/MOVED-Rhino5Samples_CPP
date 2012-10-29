@@ -299,6 +299,7 @@
     <ClCompile Include="cmdSampleDumpBlockTree.cpp" />
     <ClCompile Include="cmdSampleElevation.cpp" />
     <ClCompile Include="cmdSampleEvaluateCurve.cpp" />
+    <ClCompile Include="cmdSampleExtendLines.cpp" />
     <ClCompile Include="cmdSampleExtractFaceMesh.cpp" />
     <ClCompile Include="cmdSampleExtractIsoCurve.cpp" />
     <ClCompile Include="cmdSampleExtrudeTapered.cpp" />

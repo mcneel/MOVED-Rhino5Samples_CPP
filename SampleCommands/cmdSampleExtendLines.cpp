@@ -74,6 +74,17 @@ CRhinoCommand::result CCommandSampleExtendLines::RunCommand( const CRhinoCommand
   ON_Line line0 = line_crv0->m_line;
   ON_Line line1 = line_crv1->m_line;
 
+  ON_3dPointArray points( 4 );
+  points.Append( line0.from );
+  points.Append( line0.to );
+  points.Append( line1.from );
+  points.Append( line1.to );
+  if( !RhinoArePointsCoplanar(points) )
+  {
+    RhinoApp().Print( L"Lines are not coplanar.\n" );
+    return CRhinoCommand::nothing;
+  }
+
   ON_3dVector v0 = ( line0.to - line0.from );
   v0.Unitize();
 
@@ -86,7 +97,7 @@ CRhinoCommand::result CCommandSampleExtendLines::RunCommand( const CRhinoCommand
   double s = 0, t = 0;
   if( !ON_Intersect(ray0, ray1, &s, &t) )
   {
-    RhinoApp().Print( L"Lines do not intersect\n" );
+    RhinoApp().Print( L"Lines do not intersect.\n" );
     return CRhinoCommand::nothing;
   }
 

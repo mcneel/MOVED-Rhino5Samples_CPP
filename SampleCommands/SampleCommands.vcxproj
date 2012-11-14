@@ -337,6 +337,7 @@
     <ClCompile Include="cmdSampleRayShooter.cpp" />
     <ClCompile Include="cmdSampleRotateCenter.cpp" />
     <ClCompile Include="cmdSampleSection.cpp" />
+    <ClCompile Include="cmdSampleSelectByName.cpp" />
     <ClCompile Include="cmdSampleSelectRegion.cpp" />
     <ClCompile Include="cmdSampleSelFilter.cpp" />
     <ClCompile Include="cmdSampleSphere.cpp" />

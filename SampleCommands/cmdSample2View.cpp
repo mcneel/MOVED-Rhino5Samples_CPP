@@ -39,7 +39,7 @@ CRhinoCommand::result CCommandSample2View::RunCommand( const CRhinoCommandContex
   // top view
   {
     views[0].m_name = L"Top";
-    views[0].m_target = target;
+    views[0].SetTargetPoint( target );
     ON_3dVector dir( 0.0, 0.0, -100.0 );
     views[0].m_vp.SetCameraLocation( views[0].m_target - dir );
     views[0].m_vp.SetCameraDirection( dir );
@@ -57,7 +57,7 @@ CRhinoCommand::result CCommandSample2View::RunCommand( const CRhinoCommandContex
   // perspective view
   {
     views[1].m_name = L"Perspective";
-    views[1].m_target = target;
+    views[1].SetTargetPoint( target );
     ON_3dVector dir( -43.30, 75.00, -50.00 );
     views[1].m_vp.SetCameraLocation( views[1].m_target - dir );
     views[1].m_vp.SetCameraDirection( dir );

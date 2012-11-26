@@ -41,8 +41,6 @@ CRhinoCommand::result CCommandSampleSelectByName::RunCommand( const CRhinoComman
   if( name.IsEmpty() )
     return CRhinoCommand::nothing;
 
-  ON_ClassArray<ON_wString> strarray;
-
   CRhinoObjectIterator it( CRhinoObjectIterator::normal_objects, CRhinoObjectIterator::active_and_reference_objects  );
 
   int num_selected = 0;

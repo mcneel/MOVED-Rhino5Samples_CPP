@@ -73,6 +73,7 @@ void CSampleObjectManagerDialog::OnShowDockBar( bool bShowDockBar )
 
 BEGIN_MESSAGE_MAP(CSampleObjectManagerDialog, CRhinoTabbedDockBarDialog)
   ON_WM_TIMER()
+  ON_LBN_SELCHANGE(IDC_LISTBOX, &CSampleObjectManagerDialog::OSelChangeListBox)
 END_MESSAGE_MAP()
 
 BOOL CSampleObjectManagerDialog::PreTranslateMessage( MSG* pMsg )
@@ -94,7 +95,7 @@ BOOL CSampleObjectManagerDialog::OnInitDialog()
   m_Resize.Add( IDC_LISTBOX, CRhinoUiDialogItemResizer::resize_lockall );
 
   CRhinoTabbedDockBarDialog::OnInitDialog();
- 
+
   return TRUE;
 }
 
@@ -355,4 +356,111 @@ void CSampleObjectManagerDialog::FillListBox()
   m_listbox.SetRedraw( TRUE );
   m_listbox.Invalidate();
   m_listbox.UpdateWindow();
+}
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+//
+// BEGIN SampleObjectManagerSelect command
+//
+
+#pragma region SampleObjectManagerSelect command
+
+class CCommandSampleObjectManagerSelect : public CRhinoSelCommand
+{
+public:
+	CCommandSampleObjectManagerSelect();
+	~CCommandSampleObjectManagerSelect() {}
+	UUID CommandUUID()
+	{
+		// {6815BA85-F701-4A7F-8D2C-F6251EEB5C5E}
+		static const GUID SampleObjectManagerSelectCommand_UUID =
+		{ 0x6815BA85, 0xF701, 0x4A7F, { 0x8D, 0x2C, 0xF6, 0x25, 0x1E, 0xEB, 0x5C, 0x5E } };
+		return SampleObjectManagerSelectCommand_UUID;
+	}
+	const wchar_t* EnglishCommandName() { return L"SampleObjectManagerSelect"; }
+	const wchar_t* LocalCommandName() const { return L"SampleObjectManagerSelect"; }
+  bool SelFilter( const CRhinoObject* object );
+
+  void SetModelObjectId( ON_UUID model_object_id );
+  void SetModelObjectIds( const ON_UuidList& model_object_ids );
+
+private:
+  ON_UuidList m_model_object_ids;
+};
+
+// The one and only CCommandSampleObjectManagerSelect object
+static class CCommandSampleObjectManagerSelect theSampleObjectManagerSelectCommand;
+
+CCommandSampleObjectManagerSelect::CCommandSampleObjectManagerSelect()
+  : CRhinoSelCommand(0, true) // Make this a test command so it does not auto-complete (e.g. hidden)
+{
+}
+
+bool CCommandSampleObjectManagerSelect::SelFilter( const CRhinoObject* object )
+{
+  if( object && m_model_object_ids.FindUuid(object->ModelObjectId()) )
+    return true;
+  return false;
+}
+
+void CCommandSampleObjectManagerSelect::SetModelObjectId( ON_UUID model_object_id )
+{
+  m_model_object_ids.Empty();
+  m_model_object_ids.AddUuid( model_object_id );
+  CRhinoDoc* doc = RhinoApp().ActiveDoc();
+  if( 0 != doc )
+    doc->UnselectAll();
+}
+void CCommandSampleObjectManagerSelect::SetModelObjectIds( const ON_UuidList& model_object_ids )
+{
+  m_model_object_ids.Empty();
+  m_model_object_ids = model_object_ids;
+  CRhinoDoc* doc = RhinoApp().ActiveDoc();
+  if( 0 != doc )
+    doc->UnselectAll();
+}
+
+#pragma endregion
+
+//
+// END SampleObjectManagerSelect command
+//
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+
+void CSampleObjectManagerDialog::OSelChangeListBox()
+{
+  const int count = m_listbox.GetSelCount();
+  if( count )
+  {
+    CRhinoEventWatcher::Enable( FALSE );
+
+    ON_SimpleArray<int> items( count );
+    items.SetCount( count );
+    m_listbox.GetSelItems( count, items.Array() );
+
+    ON_UuidList uuid_list;
+    for( int i = 0; i < count; i++ )
+    {
+      int length = m_listbox.GetTextLen( items[i] );
+      ON_wString text;
+      text.ReserveArray( length + 2 );
+      text.SetLength( length );
+      m_listbox.GetText( items[i], text.Array() );
+
+      ON_UUID uuid = ON_UuidFromString( text );
+      if( ON_UuidIsNotNil(uuid) )
+        uuid_list.AddUuid( uuid );
+    }
+
+    if( uuid_list.Count() )
+    {
+      theSampleObjectManagerSelectCommand.SetModelObjectIds( uuid_list );
+      RhinoApp().RunScript( L"_SampleObjectManagerSelect", 0 );
+    }
+
+  CRhinoEventWatcher::Enable( TRUE );
+  }
 }

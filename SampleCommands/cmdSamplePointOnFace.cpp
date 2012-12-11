@@ -34,8 +34,7 @@ static bool RhFindPointOnFace( const ON_BrepFace* face, ON_3dPoint& point )
     ON_Curve* crv = iso_curves[i];
     if( crv )
     {
-      const ON_Interval& dom = crv->Domain();
-      double delta = dom.Max() - dom.Min();
+      double delta = crv->Domain().Length();
       if( delta > max_delta )
       {
         iso_index = i;

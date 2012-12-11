@@ -328,6 +328,7 @@
     <ClCompile Include="cmdSampleOrientOnSrf.cpp" />
     <ClCompile Include="cmdSamplePickColor.cpp" />
     <ClCompile Include="cmdSamplePickTextDot.cpp" />
+    <ClCompile Include="cmdSamplePointOnFace.cpp" />
     <ClCompile Include="cmdSamplePointsDeviation.cpp" />
     <ClCompile Include="cmdSamplePolyline.cpp" />
     <ClCompile Include="cmdSamplePrePostSelect.cpp" />

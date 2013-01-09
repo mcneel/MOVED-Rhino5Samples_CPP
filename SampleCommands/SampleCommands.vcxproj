@@ -348,6 +348,7 @@
     <ClCompile Include="cmdSampleSplitBrep.cpp" />
     <ClCompile Include="cmdSampleSplitCurve.cpp" />
     <ClCompile Include="cmdSampleSubCrvLength.cpp" />
+    <ClCompile Include="cmdSampleSurfaceArea.cpp" />
     <ClCompile Include="cmdSampleSurfaceNormal.cpp" />
     <ClCompile Include="cmdSampleSurfacePoints.cpp" />
     <ClCompile Include="cmdSampleSwapHatch.cpp" />

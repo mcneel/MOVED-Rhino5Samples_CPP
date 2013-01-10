@@ -297,6 +297,7 @@
     <ClCompile Include="cmdSampleDisplayPrecision.cpp" />
     <ClCompile Include="cmdSampleDrawString.cpp" />
     <ClCompile Include="cmdSampleDumpBlockTree.cpp" />
+    <ClCompile Include="cmdSampleDumpModelObjectIds.cpp" />
     <ClCompile Include="cmdSampleElevation.cpp" />
     <ClCompile Include="cmdSampleEvaluateCurve.cpp" />
     <ClCompile Include="cmdSampleExtendLines.cpp" />

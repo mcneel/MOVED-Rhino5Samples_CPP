@@ -304,6 +304,7 @@
     <ClCompile Include="cmdSampleExtractFaceMesh.cpp" />
     <ClCompile Include="cmdSampleExtractIsoCurve.cpp" />
     <ClCompile Include="cmdSampleExtrudeTapered.cpp" />
+    <ClCompile Include="cmdSampleExtrusionBox.cpp" />
     <ClCompile Include="cmdSampleFindCrvsOnSrf.cpp" />
     <ClCompile Include="cmdSampleGoldenRectangle.cpp" />
     <ClCompile Include="cmdSampleGradeLine.cpp" />

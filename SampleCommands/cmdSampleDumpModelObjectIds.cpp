@@ -83,8 +83,6 @@ CRhinoCommand::result CCommandSampleDumpModelObjectIds::RunCommand( const CRhino
     }
   }
 
-  printf
-
   return CRhinoCommand::success;
 }
 

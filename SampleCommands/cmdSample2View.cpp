@@ -65,7 +65,7 @@ CRhinoCommand::result CCommandSample2View::RunCommand( const CRhinoCommandContex
     views[1].m_vp.SetProjection( ON::perspective_view );
     views[1].m_vp.SetScreenPort( 0, 100, 100, 0, 0, 1 );
     views[1].m_vp.Extents( atan(12.0 / view_settings.m_camera_lense_length), bbox );
-    views[0].m_cplane.m_plane = ON_xy_plane;
+    views[1].m_cplane.m_plane = ON_xy_plane;
     views[1].m_position.m_wnd_left = 0.5;
     views[1].m_position.m_wnd_right = 1.0;
     views[1].m_position.m_wnd_top = 0.0;

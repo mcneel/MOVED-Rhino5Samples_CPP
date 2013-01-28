@@ -72,6 +72,13 @@ CRhinoCommand::result CCommandSampleOpenIges::RunCommand( const CRhinoCommandCon
     return CRhinoCommand::failure;
   }
 
+  // Note, setting the document modified flag to false will prevent the
+  // "Do you want to save this file..." mesasge from displaying when you
+  // open a file (if the current document has been modified in any way).
+  // But, you will (also) loose any modifications to the current document.
+  // So, use the following line of code carefully.
+  context.m_doc.SetModifiedFlag( FALSE );
+
   ON_wString script;
   script.Format( L"_-Open \"%s\" _Enter _Enter _Enter", filename );
 

@@ -37,52 +37,52 @@ CRhinoCommand::result CCommandSampleShortPath::RunCommand( const CRhinoCommandCo
   if( go.CommandResult() != CRhinoCommand::success )
     return go.CommandResult();
 
-	const ON_Surface* srf = go.Object(0).Surface();
-	if( 0 == srf )
-		return CRhinoCommand::failure;
+  const ON_Surface* srf = go.Object(0).Surface();
+  if( 0 == srf )
+    return CRhinoCommand::failure;
 
-	CRhinoGetPoint gp;
-	gp.SetCommandPrompt( L"Start of curve" );
+  CRhinoGetPoint gp;
+  gp.SetCommandPrompt( L"Start of curve" );
   gp.Constrain(*srf);
   gp.GetPoint();
   if( gp.CommandResult() != CRhinoCommand::success )
     return gp.CommandResult();
 
-	double u0, v0;
-	if( !gp.PointOnSurface(&u0, &v0) )
+  double u0, v0;
+  if( !gp.PointOnSurface(&u0, &v0) )
   {
-		RhinoApp().Print( L"Point not on the surface.\n" );
-		return CRhinoCommand::failure;
-	}
+    RhinoApp().Print( L"Point not on the surface.\n" );
+    return CRhinoCommand::failure;
+  }
 
-	gp.SetCommandPrompt( L"End of curve" );
+  gp.SetCommandPrompt( L"End of curve" );
   gp.GetPoint();
   if( gp.CommandResult() != CRhinoCommand::success )
     return gp.CommandResult();
 
-	double u1, v1;
+  double u1, v1;
   if( !gp.PointOnSurface(&u1, &v1) )
   {
-		RhinoApp().Print( L"Point not on the surface.\n" );
-		return CRhinoCommand::failure;
-	}
+    RhinoApp().Print( L"Point not on the surface.\n" );
+    return CRhinoCommand::failure;
+  }
   
-	ON_3dPoint p0 = srf->PointAt( u0, v0 );
-	ON_3dPoint p1 = srf->PointAt( u1, v1 );
+  ON_3dPoint p0 = srf->PointAt( u0, v0 );
+  ON_3dPoint p1 = srf->PointAt( u1, v1 );
 
-	if( p0.DistanceTo(p1) < ON_SQRT_EPSILON )
+  if( p0.DistanceTo(p1) < ON_SQRT_EPSILON )
   {
-		RhinoApp().Print( L"Points must be distinct.\n" );
+    RhinoApp().Print( L"Points must be distinct.\n" );
     return CRhinoCommand::nothing;
-	}
+  }
 
   double tol = context.m_doc.AbsoluteTolerance();
   ON_Curve* crv = RhinoShortPath( *srf, ON_2dPoint(u0,v0), ON_2dPoint(u1,v1), tol );
   if( 0 == crv )
   {
-		RhinoApp().Print( L"Failed to compute shortest path.\n" );
+    RhinoApp().Print( L"Failed to compute shortest path.\n" );
     return CRhinoCommand::nothing;
-	}
+  }
 
   CRhinoCurveObject* crv_obj = new CRhinoCurveObject();
   crv_obj->SetCurve( crv );

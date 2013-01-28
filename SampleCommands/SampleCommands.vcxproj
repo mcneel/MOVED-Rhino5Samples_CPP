@@ -347,6 +347,7 @@
     <ClCompile Include="cmdSampleSelectPolylineSegment.cpp" />
     <ClCompile Include="cmdSampleSelectRegion.cpp" />
     <ClCompile Include="cmdSampleSelFilter.cpp" />
+    <ClCompile Include="cmdSampleShortPath.cpp" />
     <ClCompile Include="cmdSampleSphere.cpp" />
     <ClCompile Include="cmdSampleSplitBrep.cpp" />
     <ClCompile Include="cmdSampleSplitCurve.cpp" />

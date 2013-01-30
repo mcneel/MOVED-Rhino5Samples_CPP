@@ -313,6 +313,7 @@
     <ClCompile Include="cmdSampleInterpCurve.cpp" />
     <ClCompile Include="cmdSampleIntersectCrv.cpp" />
     <ClCompile Include="cmdSampleJoinSrf.cpp" />
+    <ClCompile Include="cmdSampleLastCreatedObjects.cpp" />
     <ClCompile Include="cmdSampleLeader.cpp" />
     <ClCompile Include="cmdSampleLine.cpp" />
     <ClCompile Include="cmdSampleLoft.cpp" />

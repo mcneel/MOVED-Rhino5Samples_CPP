@@ -293,6 +293,7 @@
     <ClCompile Include="cmdSampleConvertQuadsToTriangles.cpp" />
     <ClCompile Include="cmdSampleCurvature.cpp" />
     <ClCompile Include="cmdSampleCustomMeshObjects.cpp" />
+    <ClCompile Include="cmdSampleCustomRenderMesh.cpp" />
     <ClCompile Include="cmdSampleCylinder.cpp" />
     <ClCompile Include="cmdSampleDisplayPrecision.cpp" />
     <ClCompile Include="cmdSampleDrawString.cpp" />

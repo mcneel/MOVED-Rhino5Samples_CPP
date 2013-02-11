@@ -283,6 +283,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cmdSample2View.cpp" />
+    <ClCompile Include="cmdSampleAddGroup.cpp" />
     <ClCompile Include="cmdSampleAddLayout.cpp" />
     <ClCompile Include="cmdSampleAnnotateCurveEndPoints.cpp" />
     <ClCompile Include="cmdSampleBackgroundBitmap.cpp" />

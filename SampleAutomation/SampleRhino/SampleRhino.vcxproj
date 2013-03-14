@@ -147,7 +147,7 @@
       <TargetEnvironment>Win32</TargetEnvironment>
     </Midl>
     <PostBuildEvent>
-      <Command>copy $(IntDir)SampleRhino.tlb $(SolutionDir)$(Platform)\$(Configuration)</Command>
+      <Command>copy $(IntDir)SampleRhino.tlb $(SolutionDir)\$(Configuration)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copy type library to output folder</Message>
@@ -215,7 +215,7 @@
       <TargetEnvironment>Win32</TargetEnvironment>
     </Midl>
     <PostBuildEvent>
-      <Command>copy $(IntDir)SampleRhino.tlb $(SolutionDir)$(Platform)\$(Configuration)</Command>
+      <Command>copy $(IntDir)SampleRhino.tlb $(SolutionDir)\$(Configuration)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copy type library to output folder</Message>
@@ -254,7 +254,7 @@
       <TargetEnvironment>Win32</TargetEnvironment>
     </Midl>
     <PostBuildEvent>
-      <Command>copy $(IntDir)SampleRhino.tlb $(SolutionDir)$(Platform)\$(Configuration)</Command>
+      <Command>copy $(IntDir)SampleRhino.tlb $(SolutionDir)\$(Configuration)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copy type library to output folder</Message>

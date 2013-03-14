@@ -1,6 +1,27 @@
 // Machine generated IDispatch wrapper class(es) created with Add Class from Typelib Wizard
 
-#import "C:\\Dev\\GitHub\\mcneel\\Rhino5Samples_CPP\\SampleAutomation\\x64\\Release\\SampleRhino.tlb" no_namespace
+#if defined(WIN64)
+#if defined(NDEBUG)
+#if defined(RHINO_DEBUG_PLUGIN)
+  #import "C:\\Dev\\GitHub\\mcneel\\Rhino5Samples_CPP\\SampleAutomation\\x64\\PseudoDebug\\SampleRhino.tlb" no_namespace
+#else
+  #import "C:\\Dev\\GitHub\\mcneel\\Rhino5Samples_CPP\\SampleAutomation\\x64\\Release\\SampleRhino.tlb" no_namespace
+#endif // RHINO_DEBUG_PLUGIN
+#else
+  #import "C:\\Dev\\GitHub\\mcneel\\Rhino5Samples_CPP\\SampleAutomation\\x64\\Debug\\SampleRhino.tlb" no_namespace
+#endif // NDEBUG
+#else
+#if defined(NDEBUG)
+#if defined(RHINO_DEBUG_PLUGIN)
+  #import "C:\\Dev\\GitHub\\mcneel\\Rhino5Samples_CPP\\SampleAutomation\\PseudoDebug\\SampleRhino.tlb" no_namespace
+#else
+  #import "C:\\Dev\\GitHub\\mcneel\\Rhino5Samples_CPP\\SampleAutomation\\Release\\SampleRhino.tlb" no_namespace
+#endif // RHINO_DEBUG_PLUGIN
+#else  // NDEBUG
+  #import "C:\\Dev\\GitHub\\mcneel\\Rhino5Samples_CPP\\SampleAutomation\\Debug\\SampleRhino.tlb" no_namespace
+#endif // NDEBUG
+#endif // WIN64
+
 // CSampleRhinoObject wrapper class
 
 class CSampleRhinoObject : public COleDispatchDriver

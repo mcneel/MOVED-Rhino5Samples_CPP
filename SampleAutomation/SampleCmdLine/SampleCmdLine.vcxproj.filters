@@ -36,6 +36,12 @@
     <ClInclude Include="CSampleRhinoObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CRhino5x64Interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CRhino5Interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

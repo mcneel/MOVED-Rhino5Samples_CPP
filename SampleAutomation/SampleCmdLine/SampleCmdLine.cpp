@@ -4,9 +4,10 @@
 
 #include "stdafx.h"
 #include "SampleCmdLine.h"
-
 #include "CRhino5Application.h"
+#include "CRhino5Interface.h"
 #include "CRhino5x64Application.h"
+#include "CRhino5x64Interface.h"
 #include "CSampleRhinoObject.h"
 
 // The one and only application object
@@ -46,11 +47,15 @@ int wmain( int argc, TCHAR* argv[], TCHAR* envp[] )
   CoInitializeEx( 0, COINIT_APARTMENTTHREADED );
 
 #if defined(WIN64)
-  CRhino5x64Application app;
-  BOOL rc = app.CreateDispatch( L"Rhino5x64.Application", 0 );
+  //CRhino5x64Application app;
+  //BOOL rc = app.CreateDispatch( L"Rhino5x64.Application", 0 );
+  CRhino5x64Interface app;
+  BOOL rc = app.CreateDispatch( L"Rhino5x64.Interface", 0 );
 #else
-  CRhino5Application app;
-  BOOL rc = app.CreateDispatch( L"Rhino5.Application", 0 );
+  //CRhino5Application app;
+  //BOOL rc = app.CreateDispatch( L"Rhino5.Application", 0 );
+  CRhino5Interface app;
+  BOOL rc = app.CreateDispatch( L"Rhino5.Interface", 0 );
 #endif
   if( !rc )
   {

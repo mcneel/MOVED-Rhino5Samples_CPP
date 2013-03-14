@@ -175,7 +175,7 @@
       <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;RHINO_DEBUG_PLUGIN;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -191,7 +191,7 @@
       <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN64;NDEBUG;RHINO_DEBUG_PLUGIN;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -202,7 +202,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CRhino5Application.h" />
+    <ClInclude Include="CRhino5Interface.h" />
     <ClInclude Include="CRhino5x64Application.h" />
+    <ClInclude Include="CRhino5x64Interface.h" />
     <ClInclude Include="CSampleRhinoObject.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SampleCmdLine.h" />

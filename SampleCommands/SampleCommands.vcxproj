@@ -313,6 +313,7 @@
     <ClCompile Include="cmdSampleGradeLine.cpp" />
     <ClCompile Include="cmdSampleHatch.cpp" />
     <ClCompile Include="cmdSampleInsert.cpp" />
+    <ClCompile Include="cmdSampleIntepCrvOnSrf.cpp" />
     <ClCompile Include="cmdSampleInterpCurve.cpp" />
     <ClCompile Include="cmdSampleIntersectCrv.cpp" />
     <ClCompile Include="cmdSampleJoinSrf.cpp" />
@@ -355,6 +356,7 @@
     <ClCompile Include="cmdSampleSphere.cpp" />
     <ClCompile Include="cmdSampleSplitBrep.cpp" />
     <ClCompile Include="cmdSampleSplitCurve.cpp" />
+    <ClCompile Include="cmdSampleSrfPtGrid.cpp" />
     <ClCompile Include="cmdSampleSubCrvLength.cpp" />
     <ClCompile Include="cmdSampleSurfaceArea.cpp" />
     <ClCompile Include="cmdSampleSurfaceNormal.cpp" />

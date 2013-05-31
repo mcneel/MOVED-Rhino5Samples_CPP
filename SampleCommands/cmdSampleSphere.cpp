@@ -33,7 +33,7 @@ CRhinoCommand::result CCommandSampleSphere::RunCommand( const CRhinoCommandConte
   ON_3dPoint center( 0.0, 0.0, 0.0 );
   double radius = 5.0;
   ON_Sphere sphere( center, radius );
-  ON_RevSurface* sphere_srf = sphere.RevSurfaceForm();
+  ON_RevSurface* sphere_srf = sphere.RevSurfaceForm( true );
   if( 0 == sphere_srf )
     return rc;
  

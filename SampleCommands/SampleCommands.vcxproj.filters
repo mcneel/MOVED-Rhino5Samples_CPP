@@ -291,6 +291,9 @@
     <ClCompile Include="cmdSampleMeshVertexLocation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cmdSampleIntersetCrvSrf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleCommandsApp.h">

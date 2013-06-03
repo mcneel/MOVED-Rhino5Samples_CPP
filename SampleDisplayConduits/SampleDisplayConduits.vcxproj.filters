@@ -54,6 +54,9 @@
     <ClCompile Include="cmdSampleDrawColorMesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cmdSamplePerspectiveColors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleDisplayConduitsApp.h">

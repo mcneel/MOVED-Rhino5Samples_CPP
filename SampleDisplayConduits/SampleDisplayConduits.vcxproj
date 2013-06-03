@@ -289,6 +289,7 @@
     <ClCompile Include="cmdSampleGrayscale.cpp" />
     <ClCompile Include="cmdSampleHightlightCurve.cpp" />
     <ClCompile Include="cmdSampleMeshFaceColor.cpp" />
+    <ClCompile Include="cmdSamplePerspectiveColors.cpp" />
     <ClCompile Include="cmdSampleShowMyStuff.cpp" />
     <ClCompile Include="cmdSampleSyncViews.cpp" />
     <ClCompile Include="cmdSampleViewportDecoration.cpp" />

@@ -45,8 +45,8 @@ CRhinoCommand::result CCommandSampleSave3DS::RunCommand( const CRhinoCommandCont
     CFileDialog dlg( FALSE, pszDefExt, 0, dwFlags, pszFilter, pParentWnd );
 #endif
 
-	  dlg.m_ofn.lpstrTitle = L"SaveAs 3D Studio";
-	  dlg.m_ofn.nFilterIndex = 1;
+    dlg.m_ofn.lpstrTitle = L"SaveAs 3D Studio";
+    dlg.m_ofn.nFilterIndex = 1;
     if( dlg.DoModal() == IDCANCEL )
       return CRhinoCommand::cancel;
 

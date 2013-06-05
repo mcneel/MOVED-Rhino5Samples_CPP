@@ -349,6 +349,7 @@
     <ClCompile Include="cmdSampleQueryDiameterDimension.cpp" />
     <ClCompile Include="cmdSampleRayShooter.cpp" />
     <ClCompile Include="cmdSampleRotateCenter.cpp" />
+    <ClCompile Include="cmdSampleSave3DS.cpp" />
     <ClCompile Include="cmdSampleSection.cpp" />
     <ClCompile Include="cmdSampleSelectByName.cpp" />
     <ClCompile Include="cmdSampleSelectPolylineSegment.cpp" />

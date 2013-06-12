@@ -368,6 +368,7 @@
     <ClCompile Include="cmdSampleSweep2Point.cpp" />
     <ClCompile Include="cmdSampleSyncRenderColors.cpp" />
     <ClCompile Include="cmdSampleTexture.cpp" />
+    <ClCompile Include="cmdSampleToggleLayer.cpp" />
     <ClCompile Include="cmdSampleTriangulatePolygon.cpp" />
     <ClCompile Include="cmdSampleTruncatedCone.cpp" />
     <ClCompile Include="cmdSampleUVMesh.cpp" />

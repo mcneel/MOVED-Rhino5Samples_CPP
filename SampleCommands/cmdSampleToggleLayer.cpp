@@ -11,18 +11,18 @@
 class CCommandSampleToggleLayer : public CRhinoCommand
 {
 public:
-	CCommandSampleToggleLayer() {}
-	~CCommandSampleToggleLayer() {}
-	UUID CommandUUID()
-	{
-		// {72EAC2EB-E568-4C91-A1F4-3EA3DC71E537}
-		static const GUID SampleToggleLayerCommand_UUID =
-		{ 0x72EAC2EB, 0xE568, 0x4C91, { 0xA1, 0xF4, 0x3E, 0xA3, 0xDC, 0x71, 0xE5, 0x37 } };
-		return SampleToggleLayerCommand_UUID;
-	}
-	const wchar_t* EnglishCommandName() { return L"SampleToggleLayer"; }
-	const wchar_t* LocalCommandName() const { return L"SampleToggleLayer"; }
-	CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
+  CCommandSampleToggleLayer() {}
+  ~CCommandSampleToggleLayer() {}
+  UUID CommandUUID()
+  {
+    // {72EAC2EB-E568-4C91-A1F4-3EA3DC71E537}
+    static const GUID SampleToggleLayerCommand_UUID =
+    { 0x72EAC2EB, 0xE568, 0x4C91, { 0xA1, 0xF4, 0x3E, 0xA3, 0xDC, 0x71, 0xE5, 0x37 } };
+    return SampleToggleLayerCommand_UUID;
+  }
+  const wchar_t* EnglishCommandName() { return L"SampleToggleLayer"; }
+  const wchar_t* LocalCommandName() const { return L"SampleToggleLayer"; }
+  CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
 };
 
 // The one and only CCommandSampleToggleLayer object
@@ -45,7 +45,7 @@ CRhinoCommand::result CCommandSampleToggleLayer::RunCommand( const CRhinoCommand
   int layer_index = layer_table.FindLayerFromUniqueName( layer_name, true );
   if( layer_index < 0 )
   {
-  	RhinoApp().Print( L"The \"%s\" layer was not found.\n", layer_name );
+    RhinoApp().Print( L"The \"%s\" layer was not found.\n", layer_name );
     return CRhinoCommand::nothing;
   }
 
@@ -58,7 +58,7 @@ CRhinoCommand::result CCommandSampleToggleLayer::RunCommand( const CRhinoCommand
   layer_table.ModifyLayer( onlayer, layer_index, true );
   context.m_doc.Redraw();
 
-	return CRhinoCommand::success;
+  return CRhinoCommand::success;
 }
 
 #pragma endregion

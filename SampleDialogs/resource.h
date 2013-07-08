@@ -5,6 +5,9 @@
 #define IDC_LISTBOX                     6000
 #define IDD_BLOCKVIEW_DIALOG            6000
 #define IDD_MODAL_DIALOG                9002
+#define IDC_PICK                        9002
+#define IDD_PICKOBJECTS_DIALOG          9003
+#define IDC_MESSAGE                     9003
 #define IDC_PREVIEW                     10000
 #define IDD_CIRCLEPREVIEW_DIALOG        10000
 #define IDC_RADIUS                      10001
@@ -25,9 +28,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        9003
+#define _APS_NEXT_RESOURCE_VALUE        9004
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         9002
+#define _APS_NEXT_CONTROL_VALUE         9004
 #define _APS_NEXT_SYMED_VALUE           9002
 #endif
 #endif

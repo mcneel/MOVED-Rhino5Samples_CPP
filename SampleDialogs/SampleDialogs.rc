@@ -152,6 +152,17 @@ BEGIN
     CONTROL         "",IDC_PREVIEW,"Static",SS_OWNERDRAW | SS_NOTIFY | WS_BORDER,7,67,140,93
 END
 
+IDD_PICKOBJECTS_DIALOG DIALOGEX 0, 0, 195, 80
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Pick Objects"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,39,59,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,105,59,50,14
+    PUSHBUTTON      "Pick objects",IDC_PICK,7,20,50,14
+    LTEXT           "0 objects picked.",IDC_MESSAGE,7,7,121,8
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -195,6 +206,14 @@ BEGIN
         RIGHTMARGIN, 147
         TOPMARGIN, 7
         BOTTOMMARGIN, 177
+    END
+
+    IDD_PICKOBJECTS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 73
     END
 END
 #endif    // APSTUDIO_INVOKED

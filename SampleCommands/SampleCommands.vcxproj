@@ -312,6 +312,7 @@
     <ClCompile Include="cmdSampleGetFaceTriangles.cpp" />
     <ClCompile Include="cmdSampleGoldenRectangle.cpp" />
     <ClCompile Include="cmdSampleGradeLine.cpp" />
+    <ClCompile Include="cmdSampleGumball.cpp" />
     <ClCompile Include="cmdSampleHatch.cpp" />
     <ClCompile Include="cmdSampleInsert.cpp" />
     <ClCompile Include="cmdSampleIntepCrvOnSrf.cpp" />

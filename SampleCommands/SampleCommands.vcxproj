@@ -332,6 +332,7 @@
     <ClCompile Include="cmdSampleMeshPolysrf.cpp" />
     <ClCompile Include="cmdSampleMeshVertexLocation.cpp" />
     <ClCompile Include="cmdSampleMeshVolume.cpp" />
+    <ClCompile Include="cmdSampleMirror.cpp" />
     <ClCompile Include="cmdSampleModifyBumpIntensity.cpp" />
     <ClCompile Include="cmdSampleMove.cpp" />
     <ClCompile Include="cmdSampleMoveCPlane.cpp" />

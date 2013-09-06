@@ -56,11 +56,15 @@ bool CSampleOptionsListCtrl::OnItemButtonClicked( CRhinoUiOptionsListCtrlCheckBo
   }
   else if( item.ItemID() == m_HasIsoCurves.ItemID())
   {
-    bool bEnable = BST_UNCHECKED != m_HasIsoCurves.GetCheck();
-    m_ShowIsoCurves.SetIsEnabled( bEnable);
-    m_IsoCurveDinsity.SetIsEnabled( bEnable);
-    RedrawItem( ItemIndex( m_ShowIsoCurves));
-    RedrawItem( m_IsoCurveDinsity);
+    bool bHide = ( BST_UNCHECKED == m_HasIsoCurves.GetCheck() );
+    HideItem( ItemIndex(m_ShowIsoCurves), bHide );
+    HideItem( ItemIndex(m_IsoCurveDensity), bHide );
+    RecalcLayout();
+    Invalidate();
+    //m_ShowIsoCurves.SetIsEnabled( bEnable);
+    //m_IsoCurveDensity.SetIsEnabled( bEnable);
+    //RedrawItem( ItemIndex( m_ShowIsoCurves));
+    //RedrawItem( m_IsoCurveDensity);
   }
   return true;
 }
@@ -217,17 +221,17 @@ BOOL CSampleOptionsListCtrlDlg::OnInitDialog()
     m_options_list.m_ShowIsoCurves.SetCheckText( L"Display" );
     m_options_list.AddItem( &m_options_list.m_ShowIsoCurves );
 
-    m_options_list.m_IsoCurveDinsity.SetAutoDelete( false );
-    m_options_list.m_IsoCurveDinsity.SetLabel( L"Isocurve density" );
-    m_options_list.m_IsoCurveDinsity.SetEditType( CRhinoUiEdit::et_int );
-    m_options_list.m_IsoCurveDinsity.SetText( L"1" );
-    m_options_list.m_IsoCurveDinsity.SetValue( 1 );
-    m_options_list.m_IsoCurveDinsity.SetMin( true, 0 );
-    m_options_list.m_IsoCurveDinsity.SetMax( true, 99 );
-    m_options_list.m_IsoCurveDinsity.SetAllowEmpty( false );
-    m_options_list.m_IsoCurveDinsity.SetNonZero( false );
-    m_options_list.m_IsoCurveDinsity.SetIncludeSpinner( true );
-    m_options_list.AddItem( &m_options_list.m_IsoCurveDinsity );
+    m_options_list.m_IsoCurveDensity.SetAutoDelete( false );
+    m_options_list.m_IsoCurveDensity.SetLabel( L"Isocurve density" );
+    m_options_list.m_IsoCurveDensity.SetEditType( CRhinoUiEdit::et_int );
+    m_options_list.m_IsoCurveDensity.SetText( L"1" );
+    m_options_list.m_IsoCurveDensity.SetValue( 1 );
+    m_options_list.m_IsoCurveDensity.SetMin( true, 0 );
+    m_options_list.m_IsoCurveDensity.SetMax( true, 99 );
+    m_options_list.m_IsoCurveDensity.SetAllowEmpty( false );
+    m_options_list.m_IsoCurveDensity.SetNonZero( false );
+    m_options_list.m_IsoCurveDensity.SetIncludeSpinner( true );
+    m_options_list.AddItem( &m_options_list.m_IsoCurveDensity );
 
     m_options_list.m_PointEditBox.SetLabel( L"Point edit test" );
     m_options_list.m_PointEditBox.SetPoint( 1.0, 2.0, 3.0 );

@@ -21,7 +21,7 @@ public:
 
   CRhinoUiOptionsListCtrlCheckBox m_HasIsoCurves;
   CRhinoUiOptionsListCtrlCheckBox m_ShowIsoCurves;
-  CRhinoUiOptionsListCtrlEditBox m_IsoCurveDinsity;
+  CRhinoUiOptionsListCtrlEditBox m_IsoCurveDensity;
   CRhinoUiOptionsListCtrlIPAddress m_IPAddress;
   CRhinoUiOptionsListCtrlCheckBox m_VerticalCheckBox;
   CRhinoUiOptionsListCtrlCheckBox m_HideTabCheckBox;

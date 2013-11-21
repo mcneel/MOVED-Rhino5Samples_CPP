@@ -50,7 +50,7 @@ CRhinoCommand::result CSampleScriptCancelHelper::LastCommandResult() const
 class CCommandSampleScripter : public CRhinoScriptCommand
 {
 public:
-	CCommandSampleScripter() {}
+  CCommandSampleScripter() {}
   ~CCommandSampleScripter() {}
   UUID CommandUUID()
   {
@@ -69,7 +69,7 @@ static class CCommandSampleScripter theSampleScripterCommand;
 
 CRhinoCommand::result CCommandSampleScripter::RunCommand( const CRhinoCommandContext& context )
 {
-	CSampleScriptCancelHelper helper;
+  CSampleScriptCancelHelper helper;
 
   RhinoApp().RunScript( L"_Line", 1 );
   if( helper.LastCommandResult() != CRhinoCommand::success )

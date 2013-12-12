@@ -379,6 +379,7 @@
     <ClCompile Include="cmdSampleTruncatedCone.cpp" />
     <ClCompile Include="cmdSampleUVMesh.cpp" />
     <ClCompile Include="cmdSampleVolume.cpp" />
+    <ClCompile Include="cmdSampleZoomWindow.cpp" />
     <ClCompile Include="SampleCommandsApp.cpp" />
     <ClCompile Include="SampleCommandsPlugIn.cpp" />
     <ClCompile Include="cmdSampleDumpEdgeCurves.cpp" />

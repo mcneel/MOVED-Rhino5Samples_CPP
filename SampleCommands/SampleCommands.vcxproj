@@ -379,6 +379,7 @@
     <ClCompile Include="cmdSampleTriangulatePolygon.cpp" />
     <ClCompile Include="cmdSampleTruncatedCone.cpp" />
     <ClCompile Include="cmdSampleUVMesh.cpp" />
+    <ClCompile Include="cmdSampleViewLock.cpp" />
     <ClCompile Include="cmdSampleVolume.cpp" />
     <ClCompile Include="cmdSampleZoomWindow.cpp" />
     <ClCompile Include="SampleCommandsApp.cpp" />

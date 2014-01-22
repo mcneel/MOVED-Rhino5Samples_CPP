@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "SampleDocumentUserDataEventWatcher.h"
+
 /////////////////////////////////////////////////////////////////////////////
 // CSampleDocumentUserDataPlugIn
 // See SampleDocumentUserDataPlugIn.cpp for the implementation of this class
@@ -32,12 +34,15 @@ public:
   int FindStringTableItem( const wchar_t* );
   int AddStringTableItem( const wchar_t* );
   bool DeleteStringTableItem( const wchar_t* );
+  void ClearStringTable();
 
 private:
   ON_wString m_plugin_version;
 
   // TODO: Add additional class information here
   ON_ClassArray<ON_wString> m_string_table;
+
+  CSampleDocumentUserDataEventWatcher m_watcher;
 };
 
 CSampleDocumentUserDataPlugIn& SampleDocumentUserDataPlugIn();

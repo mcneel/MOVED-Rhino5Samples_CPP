@@ -121,6 +121,9 @@ BOOL CSampleDocumentUserDataPlugIn::OnLoadPlugIn()
   //   the plug-in to continue to load.
 
   // TODO: Add plug-in initialization code here.
+  m_watcher.Register();
+  m_watcher.Enable( TRUE );
+
   return CRhinoUtilityPlugIn::OnLoadPlugIn();
 }
 
@@ -280,4 +283,9 @@ bool CSampleDocumentUserDataPlugIn::DeleteStringTableItem( const wchar_t* str )
   }
 
   return false;
+}
+
+void CSampleDocumentUserDataPlugIn::ClearStringTable()
+{
+  m_string_table.Destroy();
 }

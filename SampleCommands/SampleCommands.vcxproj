@@ -313,6 +313,7 @@
     <ClCompile Include="cmdSampleExtrusionBox.cpp" />
     <ClCompile Include="cmdSampleFindCrvsOnSrf.cpp" />
     <ClCompile Include="cmdSampleGetFaceTriangles.cpp" />
+    <ClCompile Include="cmdSampleGetPointOnMesh.cpp" />
     <ClCompile Include="cmdSampleGoldenRectangle.cpp" />
     <ClCompile Include="cmdSampleGradeLine.cpp" />
     <ClCompile Include="cmdSampleGumball.cpp" />

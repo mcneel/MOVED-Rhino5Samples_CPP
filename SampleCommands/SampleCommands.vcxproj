@@ -289,6 +289,7 @@
     <ClCompile Include="cmdSampleBackgroundBitmap.cpp" />
     <ClCompile Include="cmdSampleBend.cpp" />
     <ClCompile Include="cmdSampleBooleanUnion.cpp" />
+    <ClCompile Include="cmdSampleBrepBoxWithMesh.cpp" />
     <ClCompile Include="cmdSampleCircle.cpp" />
     <ClCompile Include="cmdSampleClassifyCurve.cpp" />
     <ClCompile Include="cmdSampleClosestAxisPoint.cpp" />

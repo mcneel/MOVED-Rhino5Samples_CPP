@@ -173,6 +173,12 @@ CRhinoRectangleGrips::CRhinoRectangleGrips()
 
 CRhinoRectangleGrips::~CRhinoRectangleGrips()
 {
+  // The grips pointed to in CRhinoObjectGrips::m_grip_list[]
+  // are in CRhinoRectangleGrips::m_rectangle_grips[].
+  // The destructors for member variables like m_rectangle_grips[]
+  // are called before the base class destructor
+  // ~CRhinoObjectGrips so m_grip_list[] needs to be empty.
+  m_grip_list.SetCount(0);
 }
 
 void CRhinoRectangleGrips::Reset()

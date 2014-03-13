@@ -178,6 +178,8 @@ CRhinoRectangleGrips::~CRhinoRectangleGrips()
   // The destructors for member variables like m_rectangle_grips[]
   // are called before the base class destructor
   // ~CRhinoObjectGrips so m_grip_list[] needs to be empty.
+  // (otherwise it has pointers to classes whose
+  // destructors have already been called). 
   m_grip_list.SetCount(0);
 }
 

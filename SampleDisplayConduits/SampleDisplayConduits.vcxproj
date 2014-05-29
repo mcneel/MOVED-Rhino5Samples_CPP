@@ -283,6 +283,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cmdSampleCameraTracker.cpp" />
+    <ClCompile Include="cmdSampleDrawArrowhead.cpp" />
     <ClCompile Include="cmdSampleDrawBitmap.cpp" />
     <ClCompile Include="cmdSampleDrawColorMesh.cpp" />
     <ClCompile Include="cmdSampleFalseColor.cpp" />
@@ -312,7 +313,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\SampleDisplayConduits.rc2" />
-    <None Include="res\SampleDrawBitmap.bmp" />
     <None Include="SampleDisplayConduits.def" />
   </ItemGroup>
   <ItemGroup>

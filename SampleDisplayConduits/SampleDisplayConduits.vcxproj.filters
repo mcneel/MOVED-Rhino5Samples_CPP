@@ -57,6 +57,9 @@
     <ClCompile Include="cmdSamplePerspectiveColors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cmdSampleDrawArrowhead.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleDisplayConduitsApp.h">
@@ -77,9 +80,6 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="res\SampleDisplayConduits.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\SampleDrawBitmap.bmp">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

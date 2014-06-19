@@ -286,6 +286,7 @@
     <ClCompile Include="cmdSampleAddGroup.cpp" />
     <ClCompile Include="cmdSampleAddLayout.cpp" />
     <ClCompile Include="cmdSampleAnnotateCurveEndPoints.cpp" />
+    <ClCompile Include="cmdSampleAutomateGrasshopper.cpp" />
     <ClCompile Include="cmdSampleBackgroundBitmap.cpp" />
     <ClCompile Include="cmdSampleBend.cpp" />
     <ClCompile Include="cmdSampleBooleanUnion.cpp" />

@@ -399,3 +399,153 @@ CRhinoCommand::result CCommandSampleWindowPick::RunCommand( const CRhinoCommandC
 //
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+//
+// BEGIN SampleRemovePoints command
+//
+
+#pragma region SampleRemovePoints command
+
+class CCommandSampleRemovePoints : public CRhinoCommand
+{
+public:
+  CCommandSampleRemovePoints() {}
+  ~CCommandSampleRemovePoints() {}
+  UUID CommandUUID()
+  {
+    // {DEED29F0-EDCA-4163-9068-462AD201EDFB}
+    static const GUID SampleRemovePointsCommand_UUID =
+    { 0xDEED29F0, 0xEDCA, 0x4163, { 0x90, 0x68, 0x46, 0x2A, 0xD2, 0x01, 0xED, 0xFB } };
+    return SampleRemovePointsCommand_UUID;
+  }
+  const wchar_t* EnglishCommandName() { return L"SampleRemovePoints"; }
+  const wchar_t* LocalCommandName() const { return L"SampleRemovePoints"; }
+  CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
+};
+
+// The one and only CCommandSampleRemovePoints object
+static class CCommandSampleRemovePoints theSampleRemovePointsCommand;
+
+CRhinoCommand::result CCommandSampleRemovePoints::RunCommand( const CRhinoCommandContext& context )
+{
+  CRhinoGetObject go;
+  go.SetCommandPrompt( L"Select point cloud" );
+  go.SetGeometryFilter( CRhinoGetObject::pointset_object );
+  go.EnableSubObjectSelect( false );
+  go.GetObjects( 1, 1 );
+  if( go.CommandResult() != CRhinoCommand::success )
+    return go.CommandResult();
+
+  const CRhinoObjRef& obj_ref = go.Object(0);
+  const CRhinoPointCloudObject* obj = CRhinoPointCloudObject::Cast( obj_ref.Object() );
+  if( 0 == obj )
+    return CRhinoCommand::failure;
+
+  const ON_PointCloud& cloud = obj->PointCloud();
+
+  obj->Select( false );
+  context.m_doc.Redraw();
+
+  CRhGetRegionPoints gp;
+  gp.SetCommandPrompt( L"Click and drag, or repeatedly click to lasso point cloud points. Press Enter when done" );
+  gp.AcceptNothing();
+  gp.SetGetPointCursor( RhinoApp().m_default_cursor );
+  gp.GetPoints();
+  if( gp.Result() == CRhinoGet::point )
+    return CRhinoCommand::cancel;
+
+  ON_SimpleArray<int> indices;
+  const int index_count = RhRegionSelectPointCloudPoints( gp.View(), cloud, gp.m_points, indices );
+  if( 0 == index_count )
+    return CRhinoCommand::nothing;
+
+  indices.QuickSort( &ON_CompareIncreasing<int> );
+
+  const CRhinoObjectAttributes& atts = obj->Attributes();
+  bool bColors = cloud.HasPointColors();
+  bool bNormals = cloud.HasPointNormals();
+
+  ON_PointCloud new_cloud;
+  new_cloud.m_P.SetCapacity( index_count );
+  new_cloud.m_P.SetCount( index_count );
+  if( bColors )
+  {
+    new_cloud.m_C.SetCapacity( index_count );
+    new_cloud.m_C.SetCount( index_count );
+  }
+  if( bNormals )
+  {
+    new_cloud.m_N.SetCapacity( index_count );
+    new_cloud.m_N.SetCount( index_count );
+  }
+
+  ON_PointCloud dup_cloud( cloud );
+  dup_cloud.DestroyHiddenPointArray();
+  
+  const int cloud_count = dup_cloud.PointCount();
+  int last_point_index = indices[indices.Count() - 1];
+  for( int i = cloud_count - 1; i >= 0; i-- )
+  {
+    if( i == last_point_index )
+    {
+      int last_array_index = indices.Count() - 1;
+
+      new_cloud.m_P[last_array_index] = dup_cloud.m_P[i];
+      if( bColors )
+        new_cloud.m_C[last_array_index] = dup_cloud.m_C[i];
+      if( bNormals )
+        new_cloud.m_N[last_array_index] = dup_cloud.m_N[i];
+
+      dup_cloud.m_P.Remove( i );
+      if( bColors )
+        dup_cloud.m_C.Remove( i );
+      if( bNormals )
+        dup_cloud.m_N.Remove( i );
+
+      indices.Remove( last_array_index );
+
+      if( 0 == indices.Count() )
+        break;
+
+      last_point_index = indices[indices.Count() - 1];
+    }
+  }
+
+  CRhinoPointCloudObject* new_cloud_obj = new CRhinoPointCloudObject( atts );
+  new_cloud_obj->SetPointCloud( new_cloud );
+  new_cloud.Destroy();
+  if( context.m_doc.AddObject(new_cloud_obj) )
+  {
+    new_cloud_obj->Select();
+  }
+  else
+  {
+    delete new_cloud_obj;
+    return CRhinoCommand::failure;
+  }
+
+  dup_cloud.m_P.Shrink();
+  if( bColors )
+    dup_cloud.m_C.Shrink();
+  if( bNormals )
+    dup_cloud.m_N.Shrink();
+
+  CRhinoPointCloudObject* dup_cloud_obj = new CRhinoPointCloudObject( atts );
+  dup_cloud_obj->SetPointCloud( dup_cloud );
+  if( !context.m_doc.ReplaceObject(obj_ref, dup_cloud_obj) )
+    delete dup_cloud_obj;
+
+  context.m_doc.Redraw();
+
+  return CRhinoCommand::success;
+}
+
+#pragma endregion
+
+//
+// END SampleRemovePoints command
+//
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////

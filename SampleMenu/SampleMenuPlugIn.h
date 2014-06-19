@@ -30,6 +30,11 @@ public:
   void OnInitPlugInMenuPopups( WPARAM wParam, LPARAM lParam );
   BOOL OnPlugInMenuCommand( WPARAM wParam );
 
+  // Plug-in specific menu helpers
+  BOOL IsSampleMenuVisible() const;
+  BOOL ShowSampleMenu();
+  BOOL HideSampleMenu();
+
 private:
   ON_wString m_plugin_version;
 
@@ -39,6 +44,3 @@ private:
 };
 
 CSampleMenuPlugIn& SampleMenuPlugIn();
-
-
-

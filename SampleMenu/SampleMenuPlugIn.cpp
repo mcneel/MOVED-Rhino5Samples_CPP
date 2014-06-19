@@ -123,14 +123,9 @@ BOOL CSampleMenuPlugIn::OnLoadPlugIn()
   //   the plug-in to continue to load.
 
   // TODO: Add plug-in initialization code here.
+  ShowSampleMenu();
 
-  // Required to access our DLL's resources
-  AFX_MANAGE_STATE( AfxGetStaticModuleState() );
-
-  if( m_menu.LoadMenu(IDR_SAMPLE_MENU) )
-    InsertPlugInMenuToRhinoMenu( m_menu.GetSafeHmenu(), 0);
-
-  return CRhinoUtilityPlugIn::OnLoadPlugIn();
+  return TRUE;
 }
 
 void CSampleMenuPlugIn::OnUnloadPlugIn()
@@ -140,8 +135,6 @@ void CSampleMenuPlugIn::OnUnloadPlugIn()
   //   this function is called, the destructor will be called.
 
   // TODO: Add plug-in cleanup code here.
-
-  CRhinoUtilityPlugIn::OnUnloadPlugIn();
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -229,4 +222,61 @@ BOOL CSampleMenuPlugIn::OnPlugInMenuCommand( WPARAM wParam )
   }
 
   return TRUE;
+}
+
+BOOL CSampleMenuPlugIn::IsSampleMenuVisible() const
+{
+  return ( 0 != m_menu.GetSafeHmenu() );
+}
+
+BOOL CSampleMenuPlugIn::ShowSampleMenu()
+{
+  // Required to access our plug-in's resources
+  AFX_MANAGE_STATE( AfxGetStaticModuleState() );
+
+  BOOL rc = ( 0 == m_menu.GetSafeHmenu() );
+  
+  if( rc )
+    rc = m_menu.LoadMenu( IDR_SAMPLE_MENU);
+
+  if( rc )
+  {
+    // Insert the menu into Rhino's menu bar.
+    // NOTE, this version gets a submenu from a main menu by index,
+    // and uses the title in the main menu.
+    InsertPlugInMenuToRhinoMenu( m_menu.GetSafeHmenu(), 0 );
+  }
+
+  return rc;
+}
+
+BOOL CSampleMenuPlugIn::HideSampleMenu()
+{
+  HMENU hSubMenu = 0;
+
+  BOOL rc = ( 0 != m_menu.GetSafeHmenu() );
+  
+  if( rc )
+  {
+    // Since we used CRhinoPlugIn::InsertPlugInMenuToRhinoMenu to
+    // insert a submenu, we need to retrieve the handle of the submenu
+    // before we can remove it.
+
+    MENUITEMINFO mi;
+    memset( &mi, 0, sizeof(mi) );
+    mi.cbSize = sizeof( mi );
+    mi.fMask = MIIM_SUBMENU;
+    rc = ::GetMenuItemInfo( m_menu.GetSafeHmenu(), 0, TRUE, &mi );
+
+    if( rc )
+      hSubMenu = mi.hSubMenu;
+  }
+
+  if( rc )
+    rc = RemovePlugInMenuFromRhino( hSubMenu );
+
+  if( rc )
+    m_menu.DestroyMenu();
+
+  return FALSE;
 }

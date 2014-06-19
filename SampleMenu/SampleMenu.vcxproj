@@ -283,6 +283,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cmdSampleMenu.cpp" />
+    <ClCompile Include="cmdSampleMenuToggle.cpp" />
     <ClCompile Include="SampleMenuApp.cpp" />
     <ClCompile Include="SampleMenuPlugIn.cpp" />
     <ClCompile Include="stdafx.cpp">

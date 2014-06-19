@@ -93,9 +93,6 @@ public:
   const wchar_t* EnglishCommandName() { return L"SampleAutomateGrasshopper"; }
   const wchar_t* LocalCommandName() const { return L"SampleAutomateGrasshopper"; }
   CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
-
-private:
-  HRESULT OpenDocument(LPDISPATCH lpDispatch, LPOLESTR lpFileName );
 };
 
 // The one and only CCommandSampleAutomateGrasshopper object
@@ -195,6 +192,7 @@ CRhinoCommand::result CCommandSampleAutomateGrasshopper::RunCommand( const CRhin
     // Release the object
     lpDispatch->Release();
   }
+
 
   // This should probably go inCSampleCommandsPlugIn::OnUnloadPlugIn...
   CoUninitialize();

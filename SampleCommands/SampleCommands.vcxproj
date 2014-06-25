@@ -335,6 +335,7 @@
     <ClCompile Include="cmdSampleLine.cpp" />
     <ClCompile Include="cmdSampleLoft.cpp" />
     <ClCompile Include="cmdSampleMakeBlock.cpp" />
+    <ClCompile Include="cmdSampleMemoryBuffer.cpp" />
     <ClCompile Include="cmdSampleMeshBooleanIntersection.cpp" />
     <ClCompile Include="cmdSampleMeshBoundary.cpp" />
     <ClCompile Include="cmdSampleMeshDir.cpp" />

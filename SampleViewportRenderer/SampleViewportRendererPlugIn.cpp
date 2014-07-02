@@ -159,6 +159,11 @@ BOOL CSampleViewportRendererPlugIn::OnLoadPlugIn()
 			pDisplayAttrsMgrListDesc->m_pAttrs->SetPipeline( RUNTIME_CLASS(CSampleDisplayPipeline) );
 		}
 	}
+  else
+  {
+    pDisplayAttrsMgrListDesc->m_pAttrs->SetName( PlugInName() );
+    pDisplayAttrsMgrListDesc->m_pAttrs->SetPipeline( RUNTIME_CLASS(CSampleDisplayPipeline) );
+  }
 
 	// Create and start the renderer
 	m_pRenderer = new CSampleRenderer();

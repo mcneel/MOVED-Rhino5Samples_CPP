@@ -6,6 +6,16 @@
 
 class CSampleRenderer;
 
+// CSampleViewportRendererDisplayModeChanged event watcher
+class CSampleViewportRendererDisplayModeChanged : public CRhinoDisplayModeChanged
+{
+public:
+  CSampleViewportRendererDisplayModeChanged();
+  virtual void Notify( const class CRhinoDisplayModeChanged::CParameters& params );
+};
+
+
+// CSampleViewportRendererPlugIn plug-in
 class CSampleViewportRendererPlugIn : public CRhinoUtilityPlugIn
 {
 public:
@@ -26,7 +36,12 @@ public:
 	// Load time override
 	CRhinoPlugIn::plugin_load_time PlugInLoadTime();
 
-	// Rendered image access
+  // Custom renderer members
+  GUID DisplayModeID() const;
+  void StartRenderer();
+  void StopRenderer();
+
+  // Rendered image access
 	CRhinoUiDib* LockRenderImage();
 	void UnlockRenderImage( CRhinoUiDib* pRenderImage );
 
@@ -58,6 +73,9 @@ private:
 
 	// Viewport update timer callback
   static void CALLBACK RedrawTimerProc( HWND hWnd, UINT nMsg, UINT_PTR nIDEvent, DWORD dwTime );
+
+  // Watches for display mode changes
+  CSampleViewportRendererDisplayModeChanged m_display_mode_watcher;
 };
 
 CSampleViewportRendererPlugIn& SampleViewportRendererPlugIn();

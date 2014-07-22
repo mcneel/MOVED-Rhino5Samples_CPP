@@ -137,12 +137,8 @@ BOOL CSampleViewportRendererPlugIn::OnLoadPlugIn()
 
   // TODO: Add plug-in initialization code here.
 
-	// Guid for our custom display mode
-  // {9913CEEE-8E5C-4F69-909D-79B73F54EAFE}
-	static const GUID SampleViewportRendererDisplayAttrs_UUID = { 0x9913CEEE, 0x8E5C, 0x4F69, { 0x90, 0x9D, 0x79, 0xB7, 0x3F, 0x54, 0xEA, 0xFE } };
-
 	// Look if the display mode is already added...
-	DisplayAttrsMgrListDesc* pDisplayAttrsMgrListDesc = CRhinoDisplayAttrsMgr::FindDisplayAttrsDesc( SampleViewportRendererDisplayAttrs_UUID );
+	DisplayAttrsMgrListDesc* pDisplayAttrsMgrListDesc = CRhinoDisplayAttrsMgr::FindDisplayAttrsDesc( DisplayModeID() );
 
 	// ... and if it isn't then add it.
 	if( 0 == pDisplayAttrsMgrListDesc )
@@ -154,7 +150,7 @@ BOOL CSampleViewportRendererPlugIn::OnLoadPlugIn()
 			pDisplayAttrsMgrListDesc->m_bAddToMenu = true;
 
 			// Set it's guid, name and pipeline class
-			pDisplayAttrsMgrListDesc->m_pAttrs->SetUuid( SampleViewportRendererDisplayAttrs_UUID );
+			pDisplayAttrsMgrListDesc->m_pAttrs->SetUuid( DisplayModeID() );
 			pDisplayAttrsMgrListDesc->m_pAttrs->SetName( PlugInName() );
 			pDisplayAttrsMgrListDesc->m_pAttrs->SetPipeline( RUNTIME_CLASS(CSampleDisplayPipeline) );
 		}
@@ -165,17 +161,14 @@ BOOL CSampleViewportRendererPlugIn::OnLoadPlugIn()
     pDisplayAttrsMgrListDesc->m_pAttrs->SetPipeline( RUNTIME_CLASS(CSampleDisplayPipeline) );
   }
 
-	// Create and start the renderer
-	m_pRenderer = new CSampleRenderer();
-	if( 0 != m_pRenderer )
-		m_pRenderer->StartRenderProcess();
+	// Start the renderer
+  StartRenderer();
 
-	// Set timer for the viewport updating
-	CWnd* pMainWnd = RhinoApp().GetMainWnd();
-	if( 0 != pMainWnd )
-		m_uTimerProcId = pMainWnd->SetTimer( CSampleViewportRendererPlugIn::s_uTimerProcEvent, 100, CSampleViewportRendererPlugIn::RedrawTimerProc );
+  // Enable our displa mode event watcher
+  m_display_mode_watcher.Register();
+  m_display_mode_watcher.Enable(true);
 
-  return CRhinoUtilityPlugIn::OnLoadPlugIn();
+  return TRUE;
 }
 
 void CSampleViewportRendererPlugIn::OnUnloadPlugIn()
@@ -186,21 +179,8 @@ void CSampleViewportRendererPlugIn::OnUnloadPlugIn()
 
   // TODO: Add plug-in cleanup code here.
 
-	// Kill the timer
-	CWnd* pMainWnd = RhinoApp().GetMainWnd();
-	if( 0 != pMainWnd )
-		pMainWnd->KillTimer( m_uTimerProcId );
-
-	// Stop renderer and delete it
-	if( 0 != m_pRenderer )
-  {
-		m_pRenderer->StopRenderProcess();
-
-  	delete m_pRenderer;
-	  m_pRenderer = 0;
-  }
-
-  CRhinoUtilityPlugIn::OnUnloadPlugIn();
+  // Stop the renderer
+  StopRenderer();
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -208,7 +188,7 @@ void CSampleViewportRendererPlugIn::OnUnloadPlugIn()
 
 BOOL CSampleViewportRendererPlugIn::AddToPlugInHelpMenu() const
 {
-	return TRUE;
+	return FALSE;
 }
 
 BOOL CSampleViewportRendererPlugIn::OnDisplayPlugInHelp( HWND hWnd ) const
@@ -225,6 +205,52 @@ CRhinoPlugIn::plugin_load_time CSampleViewportRendererPlugIn::PlugInLoadTime()
 	return CRhinoPlugIn::load_plugin_at_startup;
 }
 
+/////////////////////////////////////////////////////////////////////////////
+// Custom renderer members
+
+GUID CSampleViewportRendererPlugIn::DisplayModeID() const
+{
+  // Guid for our custom display mode
+  // {9913CEEE-8E5C-4F69-909D-79B73F54EAFE}
+	static const GUID SampleViewportRendererDisplayAttrs_UUID = 
+  { 0x9913CEEE, 0x8E5C, 0x4F69, { 0x90, 0x9D, 0x79, 0xB7, 0x3F, 0x54, 0xEA, 0xFE } };
+  return SampleViewportRendererDisplayAttrs_UUID;
+}
+
+// Starts the renderer
+void CSampleViewportRendererPlugIn::StartRenderer()
+{
+  if( 0 == m_pRenderer )
+  {
+	  // Create and start the renderer
+	  m_pRenderer = new CSampleRenderer();
+	  if( 0 != m_pRenderer )
+		  m_pRenderer->StartRenderProcess();
+
+	  // Set timer for the viewport updating
+	  CWnd* pMainWnd = RhinoApp().GetMainWnd();
+	  if( 0 != pMainWnd )
+		  m_uTimerProcId = pMainWnd->SetTimer( CSampleViewportRendererPlugIn::s_uTimerProcEvent, 100, CSampleViewportRendererPlugIn::RedrawTimerProc );
+  }
+}
+
+// Stops the renderer
+void CSampleViewportRendererPlugIn::StopRenderer()
+{
+  if( 0 != m_pRenderer )
+  {
+	  // Kill the timer
+	  CWnd* pMainWnd = RhinoApp().GetMainWnd();
+	  if( 0 != pMainWnd )
+		  pMainWnd->KillTimer( m_uTimerProcId );
+    m_uTimerProcId = 0;
+
+	  // Stop renderer and delete it
+    m_pRenderer->StopRenderProcess();
+    delete m_pRenderer;
+    m_pRenderer = 0;
+  }
+}
 
 /////////////////////////////////////////////////////////////////////////////
 // Rendered image access
@@ -270,10 +296,43 @@ void CSampleViewportRendererPlugIn::OnRedrawTimer()
 	}
 }
 
+// Viewport update timer event
 UINT CSampleViewportRendererPlugIn::s_uTimerProcEvent = 6060;
 
+// Viewport update timer callback
 void CALLBACK CSampleViewportRendererPlugIn::RedrawTimerProc( HWND hWnd, UINT nMsg, UINT_PTR nIDEvent, DWORD dwTime )
 {
 	// Call the OnRedrawTimer of our plugin instance
 	SampleViewportRendererPlugIn().OnRedrawTimer();
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
+// CSampleViewportRendererDisplayModeChanged event watcher
+
+CSampleViewportRendererDisplayModeChanged::CSampleViewportRendererDisplayModeChanged()
+  : CRhinoDisplayModeChanged(SampleViewportRendererPlugIn().PlugInID())
+{
+}
+
+// Rhino will call Notify() immediately after changing the view's display mode.
+// WARNING: Never modify the Rhino document or application state in a Notify override.
+// Never attempt to change the view's (or any other view) display mode inside
+// your Notify routine, or you will eventually crash Rhino.
+void CSampleViewportRendererDisplayModeChanged::Notify( const class CRhinoDisplayModeChanged::CParameters& params )
+{
+  // For more information, see rhinoSdkEventWatcher.h
+
+  if( (0 != params.m_vp) && (params.m_changed_display_mode_id != params.m_old_display_mode_id) )
+  {
+    // A view's display mode has been set.
+  }
+  else if( (params.m_vp != NULL) && (params.m_changed_display_mode_id == params.m_old_display_mode_id) )
+  {
+    // The attributes of the display mode used by the active view have changed.
+  }
+  else if( (params.m_vp == NULL) && (params.m_old_display_mode_id == ON_nil_uuid) )
+  {
+    // The attributes of a specific display mode have changed.
+  }
 }

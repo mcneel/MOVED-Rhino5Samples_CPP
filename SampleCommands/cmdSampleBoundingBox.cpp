@@ -70,8 +70,8 @@ CRhinoCommand::result CCommandSampleBoundingBox::RunCommand( const CRhinoCommand
   }
 
   ON_BoundingBox bbox;
-	if (!RhinoGetTightBoundingBox(objects, bbox, false, onb))
-		return CRhinoCommand::cancel;
+  if (!RhinoGetTightBoundingBox(objects, bbox, false, onb))
+    return CRhinoCommand::cancel;
 
   ON_3dPoint box_corners[8];
 

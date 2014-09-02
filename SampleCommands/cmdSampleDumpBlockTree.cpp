@@ -55,11 +55,7 @@ void CCommandSampleDumpBlockTree::DumpInstanceDefinition( const CRhinoInstanceDe
 {
   if( idef && ! idef->IsDeleted() )
   {
-    ON_wString node;
-    if( bRoot )
-      node = L"\u2500";
-    else
-      node = L"\u2514";
+    ON_wString node = (bRoot) ? L"\x2500" : L"\x2514";
     dump.Print(L"%s Instance definition %d = %s\n", node, idef->Index(), idef->Name() );
 
     const int idef_object_count = idef->ObjectCount();
@@ -75,7 +71,7 @@ void CCommandSampleDumpBlockTree::DumpInstanceDefinition( const CRhinoInstanceDe
           if( iref )
             DumpInstanceDefinition( iref->InstanceDefinition(), dump, false );
           else
-            dump.Print(L"\u2514 Object %d = %s\n", i, obj->ShortDescription(false) );
+            dump.Print(L"\x2514 Object %d = %s\n", i, obj->ShortDescription(false) );
         }
       }
       dump.PopIndent();

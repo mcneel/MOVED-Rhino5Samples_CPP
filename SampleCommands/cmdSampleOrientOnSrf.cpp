@@ -112,7 +112,10 @@ CRhinoCommand::result CCommandSampleOrientOnSrf::RunCommand( const CRhinoCommand
       bool bDeleteOriginal = false;
       int i;
       for( i = 0; i < go.ObjectCount(); i++ )
-        context.m_doc.TransformObject( go.Object(i), xform, bDeleteOriginal );
+      {
+        CRhinoObjRef obj_ref = go.Object(i);
+        context.m_doc.TransformObject(obj_ref, xform, bDeleteOriginal);
+      }
       context.m_doc.Redraw();
       rc = CRhinoCommand::success;
     }

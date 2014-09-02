@@ -12,7 +12,7 @@
 Description:
   Generic function to call an OLE method or to set/get an OLE property.
 Parameters:
-  nType      - [in] Type of call to make, which can be any of the following values:
+  dwFlag     - [in] Type of call to make, which can be any of the following values:
                       DISPATCH_PROPERTYPUT - Set property value
                       DISPATCH_PROPERTYGET - Get property value
                       DISPATCH_METHOD - Call a method
@@ -28,7 +28,7 @@ Returns:
 Remarks:
   The call is reposible for any memory allocated and returned in pvResult.
 */
-HRESULT OLEMethod( int nType, VARIANT* pvResult, LPDISPATCH lpDispatch, LPOLESTR lpName, int cArgs... )
+HRESULT OLEMethod( WORD dwFlag, VARIANT* pvResult, LPDISPATCH lpDispatch, LPOLESTR lpName, int cArgs... )
 {
   if( 0 == lpDispatch ) 
     return E_FAIL;
@@ -57,14 +57,14 @@ HRESULT OLEMethod( int nType, VARIANT* pvResult, LPDISPATCH lpDispatch, LPOLESTR
   dp.rgvarg = pArgs;
 
   // Handle special-case for property-puts
-  if( nType & DISPATCH_PROPERTYPUT ) 
+  if( dwFlag & DISPATCH_PROPERTYPUT ) 
   {
     dp.cNamedArgs = 1;
     dp.rgdispidNamedArgs = &dispidNamed;
   }
 
   // Make the call
-  hr = lpDispatch->Invoke( dispID, IID_NULL, LOCALE_SYSTEM_DEFAULT, nType, &dp, pvResult, NULL, NULL );
+  hr = lpDispatch->Invoke( dispID, IID_NULL, LOCALE_SYSTEM_DEFAULT, dwFlag, &dp, pvResult, NULL, NULL );
 
   // End variable-argument section
   va_end(marker);

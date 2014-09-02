@@ -256,7 +256,8 @@ void CCommandSampleOrientOnCrv::TransformObjects( CRhinoDoc& doc, CRhinoXformObj
 
   for( int i = 0; i < list.m_objects.Count(); i++ )
   {
-    transformed_object = doc.TransformObject( CRhinoObjRef(list.m_objects[i]), xform, bCopy ? false : true );
+    CRhinoObjRef obj_ref(list.m_objects[i]);
+    transformed_object = doc.TransformObject(obj_ref, xform, bCopy ? false : true);
     if( !transformed_object )
       num_failed++;
   }

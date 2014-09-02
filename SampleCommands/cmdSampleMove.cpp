@@ -78,7 +78,10 @@ CRhinoCommand::result CCommandSampleMove::RunCommand( const CRhinoCommandContext
 	if( gt.CalculateTransform(view->ActiveViewport(), gt.Point(), xform) )
   {
 	  for( int i = 0; i < go.ObjectCount(); i++ )
-		  context.m_doc.TransformObject( go.Object(i), xform );
+    {
+      CRhinoObjRef obj_ref = go.Object(i);
+		  context.m_doc.TransformObject( obj_ref, xform );
+    }
 	  context.m_doc.Redraw();
   }
 

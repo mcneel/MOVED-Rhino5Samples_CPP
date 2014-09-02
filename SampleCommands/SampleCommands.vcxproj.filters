@@ -372,6 +372,9 @@
     <ClCompile Include="cmdSampleDumpMaterialUserData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cmdSampleBoundingBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleCommandsApp.h">
@@ -393,6 +396,9 @@
     </None>
     <None Include="res\SampleCommands.rc2">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cmdSampleDupBorder.cs">
+      <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

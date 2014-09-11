@@ -285,6 +285,7 @@
     <ClCompile Include="cmdSample2View.cpp" />
     <ClCompile Include="cmdSampleAddGroup.cpp" />
     <ClCompile Include="cmdSampleAddLayout.cpp" />
+    <ClCompile Include="cmdSampleAddSearchPath.cpp" />
     <ClCompile Include="cmdSampleAnnotateCurveEndPoints.cpp" />
     <ClCompile Include="cmdSampleAutomateGrasshopper.cpp" />
     <ClCompile Include="cmdSampleBackgroundBitmap.cpp" />

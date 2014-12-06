@@ -100,6 +100,8 @@ void CSampleRhinoEventWatcher::OnDeleteObject( CRhinoDoc& doc, CRhinoObject& obj
 void CSampleRhinoEventWatcher::OnReplaceObject( CRhinoDoc& doc, CRhinoObject& old_object, CRhinoObject& new_object )
 {
   RhinoApp().Print( L"** EVENT: Replace Object **\n" );
+  RhinoApp().Print( L"**      UndoActive() = %s **\n", doc.UndoActive() ? L"TRUE" : L"FALSE" );
+  RhinoApp().Print( L"**      RedoActive() = %s **\n", doc.RedoActive() ? L"TRUE" : L"FALSE" );
 }
 
 void CSampleRhinoEventWatcher::OnUnDeleteObject( CRhinoDoc& doc, CRhinoObject& object )

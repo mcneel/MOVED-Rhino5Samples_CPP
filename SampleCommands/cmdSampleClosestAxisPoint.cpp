@@ -71,7 +71,7 @@ CRhinoCommand::result CCommandSampleClosestAxisPoint::RunCommand( const CRhinoCo
   CRhinoGetOption ga;
   ga.SetCommandPrompt( L"Closest axis" );
   int x_idx = ga.AddCommandOption( RHCMDOPTNAME(L"Xaxis") );
-  int y_idx = ga.AddCommandOption( RHCMDOPTNAME(L"Yaxis") );
+  /*int y_idx =*/ ga.AddCommandOption( RHCMDOPTNAME(L"Yaxis") );
   ga.GetOption();
   if( ga.CommandResult() != CRhinoCommand::success )
     return ga.CommandResult();

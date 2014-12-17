@@ -46,10 +46,10 @@ CRhinoCommand::result CCommandSamplePrePostSelect::RunCommand( const CRhinoComma
   go.EnableGroupSelect( TRUE );
   go.EnableSubObjectSelect( FALSE );
 
-  int d_option_index = go.AddCommandOptionNumber( 
+  /*int d_option_index =*/ go.AddCommandOptionNumber( 
       RHCMDOPTNAME(L"Double"), &dValue, L"Double value", FALSE, 1.0, 99.9 );
 
-  int n_option_index = go.AddCommandOptionInteger( 
+  /*int n_option_index =*/ go.AddCommandOptionInteger( 
       RHCMDOPTNAME(L"Integer"), &nValue, L"Integer value", 1, 99 );
 
   bool bHavePreselectedObjects = false;

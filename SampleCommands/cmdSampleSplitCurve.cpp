@@ -164,7 +164,7 @@ CRhinoCommand::result CCommandSampleSplitCurve::PickCurveParameters( CRhinoDoc& 
   CRhinoGetCurvePoints gp;
   gp.Constrain( crv );
   int l_option = gp.AddCommandOption( RHCMDOPTNAME(L"Length") );
-  int s_option = gp.AddCommandOption( RHCMDOPTNAME(L"Segments") );
+  /*int s_option =*/ gp.AddCommandOption( RHCMDOPTNAME(L"Segments") );
   CRhinoGet::result res = gp.GetPoints();
   if( res == CRhinoGet::option )
   {

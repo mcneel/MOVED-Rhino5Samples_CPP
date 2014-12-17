@@ -45,7 +45,7 @@ CRhinoCommand::result CCommandSampleConvertQuadsToTriangles::RunCommand( const C
   gs.SetCommandPrompt( L"Delete input?" );
   gs.SetDefaultString( (m_delete_input)?L"Yes":L"No" );
   int n_index = gs.AddCommandOption( RHCMDOPTNAME(L"No") );
-  int y_index = gs.AddCommandOption( RHCMDOPTNAME(L"Yes") );
+  /*int y_index =*/ gs.AddCommandOption( RHCMDOPTNAME(L"Yes") );
   switch( gs.GetOption() )
   {
     case CRhinoGet::option:

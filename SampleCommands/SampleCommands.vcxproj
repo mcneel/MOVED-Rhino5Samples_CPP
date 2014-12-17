@@ -340,6 +340,7 @@
     <ClCompile Include="cmdSampleLastCreatedObjects.cpp" />
     <ClCompile Include="cmdSampleLeader.cpp" />
     <ClCompile Include="cmdSampleLine.cpp" />
+    <ClCompile Include="cmdSampleLineMeshIntersect.cpp" />
     <ClCompile Include="cmdSampleLoft.cpp" />
     <ClCompile Include="cmdSampleMakeBlock.cpp" />
     <ClCompile Include="cmdSampleMemoryBuffer.cpp" />

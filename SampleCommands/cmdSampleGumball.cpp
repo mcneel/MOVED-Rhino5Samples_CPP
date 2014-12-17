@@ -158,7 +158,6 @@ CRhinoCommand::result CCommandSampleGumball::RunCommand( const CRhinoCommandCont
 
   CRhinoGumballDisplayConduit dc;
 
-  bool bCopy = false;
   while(true)
   {
     dc.SetBaseGumball( gb );

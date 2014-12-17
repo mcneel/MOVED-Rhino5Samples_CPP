@@ -22,7 +22,6 @@ public:
     dump.Print( L"ON_BrepFace[%d]:\n", face->m_face_index );
     dump.PushIndent();
 
-    int edge_count = 0;
     for( int i = 0; i < face->m_li.Count(); i++ )
     {
       const ON_BrepLoop& loop = brep->m_L[face->m_li[i]];

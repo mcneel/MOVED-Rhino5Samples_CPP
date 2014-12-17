@@ -62,7 +62,6 @@ CRhinoCommand::result CCommandSampleVolume::RunCommand( const CRhinoCommandConte
     geom[i]->GetBoundingBox( bbox, bbox.IsValid() );
 
   ON_3dPoint base_point = bbox.Center();
-  double RhinoTol = context.m_doc.AbsoluteTolerance();
 
   ON_SimpleArray<ON_MassProperties> MassProp;
   MassProp.Reserve( geom.Count() );

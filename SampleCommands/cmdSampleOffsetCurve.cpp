@@ -58,7 +58,7 @@ CRhinoCommand::result CCommandSampleOffsetCurve::RunCommand( const CRhinoCommand
   for(;;)
   {
     go.ClearCommandOptions();
-    int distance = go.AddCommandOptionNumber( RHCMDOPTNAME(L"Distance"), &m_distance, 0, 0, 0.0 );
+    /*int distance =*/ go.AddCommandOptionNumber( RHCMDOPTNAME(L"Distance"), &m_distance, 0, 0, 0.0 );
     int corner = go.AddCommandOptionList( RHCMDOPTNAME(L"Corner"), 5, list, m_corner );
     
     CRhinoGet::result res = go.GetObjects( 1, 0 );
@@ -89,7 +89,7 @@ CRhinoCommand::result CCommandSampleOffsetCurve::RunCommand( const CRhinoCommand
   for(;;)
   {
     gp.ClearCommandOptions();
-    int distance = gp.AddCommandOptionNumber( RHCMDOPTNAME(L"Distance"), &m_distance, 0, 0, 0.0 );
+    /*int distance =*/ gp.AddCommandOptionNumber( RHCMDOPTNAME(L"Distance"), &m_distance, 0, 0, 0.0 );
     int corner = gp.AddCommandOptionList( RHCMDOPTNAME(L"Corner"), 5, list, m_corner );
 
     CRhinoGet::result res = gp.GetPoint();

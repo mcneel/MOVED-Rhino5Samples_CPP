@@ -72,10 +72,10 @@ static const ON_BrepFace* GetOtherFace(const ON_BrepTrim* trim)
       face = other_trim->Face();
 
       // You can also get the loop on the other side of the edge
-      const ON_BrepLoop* other_loop = other_trim->Loop();
+      //const ON_BrepLoop* other_loop = other_trim->Loop();
 
       // Or the surface geometry of the face
-      const ON_Surface* srf = face->SurfaceOf();
+      //const ON_Surface* srf = face->SurfaceOf();
 
       break;
     }

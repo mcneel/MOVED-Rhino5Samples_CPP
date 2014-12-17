@@ -84,9 +84,6 @@ bool CCommandSampleZoomRotateWindow::DollyWindow( const CRhinoViewport& vport, C
   if( !vp_in.GetScreenPort(&sleft, &sright, &sbottom, &stop) )
     return false;
 
-  int screen_width = sright - sleft;
-  int screen_height = sbottom - stop;
-
   // frustum values
   double fleft, fright, ftop, fbottom, fnear, ffar;
   if( !vp_in.GetFrustum(&fleft, &fright, &fbottom, &ftop, &fnear, &ffar) )

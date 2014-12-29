@@ -60,6 +60,9 @@
     <ClCompile Include="cmdSampleDrawArrowhead.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cmdSampleDrawWireframeMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleDisplayConduitsApp.h">

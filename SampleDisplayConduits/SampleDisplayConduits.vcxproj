@@ -286,6 +286,7 @@
     <ClCompile Include="cmdSampleDrawArrowhead.cpp" />
     <ClCompile Include="cmdSampleDrawBitmap.cpp" />
     <ClCompile Include="cmdSampleDrawColorMesh.cpp" />
+    <ClCompile Include="cmdSampleDrawWireframeMesh.cpp" />
     <ClCompile Include="cmdSampleFalseColor.cpp" />
     <ClCompile Include="cmdSampleGrayscale.cpp" />
     <ClCompile Include="cmdSampleHightlightCurve.cpp" />

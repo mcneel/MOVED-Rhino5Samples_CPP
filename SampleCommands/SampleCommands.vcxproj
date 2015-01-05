@@ -315,6 +315,7 @@
     <ClCompile Include="cmdSampleDupMeshBorder.cpp" />
     <ClCompile Include="cmdSampleElevation.cpp" />
     <ClCompile Include="cmdSampleEvaluateCurve.cpp" />
+    <ClCompile Include="cmdSampleExplodeBrep.cpp" />
     <ClCompile Include="cmdSampleExplodePointCloud.cpp" />
     <ClCompile Include="cmdSampleExportRenderMeshes.cpp" />
     <ClCompile Include="cmdSampleExtendLines.cpp" />

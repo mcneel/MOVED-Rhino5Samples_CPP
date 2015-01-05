@@ -283,6 +283,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cmdSample2View.cpp" />
+    <ClCompile Include="cmdSampleAddCage.cpp" />
     <ClCompile Include="cmdSampleAddGroup.cpp" />
     <ClCompile Include="cmdSampleAddLayout.cpp" />
     <ClCompile Include="cmdSampleAddSearchPath.cpp" />
@@ -294,6 +295,7 @@
     <ClCompile Include="cmdSampleBooleanUnion.cpp" />
     <ClCompile Include="cmdSampleBoundingBox.cpp" />
     <ClCompile Include="cmdSampleBrepBoxWithMesh.cpp" />
+    <ClCompile Include="cmdSampleCageEdit.cpp" />
     <ClCompile Include="cmdSampleCircle.cpp" />
     <ClCompile Include="cmdSampleClassifyCurve.cpp" />
     <ClCompile Include="cmdSampleClosestAxisPoint.cpp" />

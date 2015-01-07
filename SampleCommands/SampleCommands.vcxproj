@@ -363,6 +363,7 @@
     <ClCompile Include="cmdSampleOpenIges.cpp" />
     <ClCompile Include="cmdSampleOrientOnCrv.cpp" />
     <ClCompile Include="cmdSampleOrientOnSrf.cpp" />
+    <ClCompile Include="cmdSamplePhantomObject.cpp" />
     <ClCompile Include="cmdSamplePickColor.cpp" />
     <ClCompile Include="cmdSamplePickTextDot.cpp" />
     <ClCompile Include="cmdSamplePipe.cpp" />

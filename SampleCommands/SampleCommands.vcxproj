@@ -286,6 +286,7 @@
     <ClCompile Include="cmdSampleAddCage.cpp" />
     <ClCompile Include="cmdSampleAddGroup.cpp" />
     <ClCompile Include="cmdSampleAddLayout.cpp" />
+    <ClCompile Include="cmdSampleAddNurbsCircle.cpp" />
     <ClCompile Include="cmdSampleAddSearchPath.cpp" />
     <ClCompile Include="cmdSampleAdjacentBrepFace.cpp" />
     <ClCompile Include="cmdSampleAnnotateCurveEndPoints.cpp" />

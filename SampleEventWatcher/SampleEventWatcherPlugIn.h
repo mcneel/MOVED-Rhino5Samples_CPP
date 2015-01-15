@@ -22,6 +22,8 @@ public:
   BOOL OnLoadPlugIn();
   void OnUnloadPlugIn();
 
+  CRhinoCommand::result MoveObjects(const CRhinoCommandContext& context);
+
 private:
   ON_wString m_plugin_version;
 

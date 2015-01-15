@@ -200,7 +200,35 @@ void CSampleRhinoEventWatcher::HatchPatternTableEvent( CRhinoEventWatcher::hatch
 ////////////////////////////////////////////////////////////////
 // Undo event
 
-void CSampleRhinoEventWatcher::UndoEvent( CRhinoEventWatcher::undo_event type, unsigned int undo_record_serialnumber, const CRhinoCommand* cmd )
+void CSampleRhinoEventWatcher::UndoEvent(CRhinoEventWatcher::undo_event type, unsigned int undo_record_serialnumber, const CRhinoCommand* cmd)
 {
-  RhinoApp().Print( L"** EVENT: Undo **\n" );
+  ON_wString str;
+  switch (type)
+  {
+  case CRhinoEventWatcher::no_undo_event:
+    str = L"No Undo Event";
+    break;
+  case CRhinoEventWatcher::begin_recording:
+    str = L"Begin Recording";
+    break;
+  case CRhinoEventWatcher::end_recording:
+    str = L"End Recording";
+    break;
+  case CRhinoEventWatcher::begin_undo:
+    str = L"Begin Undo";
+    break;
+  case CRhinoEventWatcher::end_undo:
+    str = L"End Undo";
+    break;
+  case CRhinoEventWatcher::begin_redo:
+    str = L"Begin Undo";
+    break;
+  case CRhinoEventWatcher::end_redo:
+    str = L"End Redo";
+    break;
+  case CRhinoEventWatcher::purge_record:
+    str = L"Purge Record";
+    break;
+  }
+  RhinoApp().Print(L"** EVENT: Undo, Type: %s **\n", (const wchar_t*)str);
 }

@@ -315,11 +315,13 @@
     <ClCompile Include="cmdSampleDumpBlockTree.cpp" />
     <ClCompile Include="cmdSampleDumpMaterialUserData.cpp" />
     <ClCompile Include="cmdSampleDumpModelObjectIds.cpp" />
+    <ClCompile Include="cmdSampleDupBorder.cpp" />
     <ClCompile Include="cmdSampleDupMeshBorder.cpp" />
     <ClCompile Include="cmdSampleElevation.cpp" />
     <ClCompile Include="cmdSampleEvaluateCurve.cpp" />
     <ClCompile Include="cmdSampleExplodeBrep.cpp" />
     <ClCompile Include="cmdSampleExplodePointCloud.cpp" />
+    <ClCompile Include="cmdSampleExportDisplayMode.cpp" />
     <ClCompile Include="cmdSampleExportRenderMeshes.cpp" />
     <ClCompile Include="cmdSampleExtendLines.cpp" />
     <ClCompile Include="cmdSampleExtractCurves.cpp" />
@@ -428,7 +430,6 @@
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="cmdSampleDupBorder.cs" />
     <None Include="res\SampleCommands.rc2" />
     <None Include="SampleCommands.def" />
   </ItemGroup>

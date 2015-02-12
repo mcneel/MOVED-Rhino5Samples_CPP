@@ -307,6 +307,9 @@
     <ClCompile Include="cmdSampleCustomMeshObjects.cpp" />
     <ClCompile Include="cmdSampleCustomRenderMesh.cpp" />
     <ClCompile Include="cmdSampleCylinder.cpp" />
+    <ClCompile Include="cmdSampleDimAngular.cpp" />
+    <ClCompile Include="cmdSampleDimLinear.cpp" />
+    <ClCompile Include="cmdSampleDimLinear2.cpp" />
     <ClCompile Include="cmdSampleDimLinearOverride.cpp" />
     <ClCompile Include="cmdSampleDimStyleTextHeight.cpp" />
     <ClCompile Include="cmdSampleDimTextHeight.cpp" />

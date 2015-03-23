@@ -31,7 +31,7 @@ static class CCommandSampleDimAngular theSampleDimAngularCommand;
 CRhinoCommand::result CCommandSampleDimAngular::RunCommand( const CRhinoCommandContext& context )
 {
   CRhinoAngularDimension* pDim = 0;
-  CRhinoCommand::result rc =  GetAngularDimension(context.m_doc, context.IsInteractive(), pDim, 0);
+  CRhinoCommand::result rc = GetAngularDimension(context.m_doc, context.IsInteractive(), pDim, 0);
   if( rc == CRhinoCommand::success && 0 != pDim )
   {
     context.m_doc.AddObject( pDim, FALSE );

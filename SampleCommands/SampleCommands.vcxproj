@@ -331,6 +331,7 @@
     <ClCompile Include="cmdSampleExportRenderMeshes.cpp" />
     <ClCompile Include="cmdSampleExtendLines.cpp" />
     <ClCompile Include="cmdSampleExtractCurves.cpp" />
+    <ClCompile Include="cmdSampleExtractEdgeCurves.cpp" />
     <ClCompile Include="cmdSampleExtractFaceMesh.cpp" />
     <ClCompile Include="cmdSampleExtractIsoCurve.cpp" />
     <ClCompile Include="cmdSampleExtrudeTapered.cpp" />
@@ -373,6 +374,7 @@
     <ClCompile Include="cmdSampleOpenIges.cpp" />
     <ClCompile Include="cmdSampleOrientOnCrv.cpp" />
     <ClCompile Include="cmdSampleOrientOnSrf.cpp" />
+    <ClCompile Include="cmdSamplePan.cpp" />
     <ClCompile Include="cmdSamplePhantomObject.cpp" />
     <ClCompile Include="cmdSamplePickColor.cpp" />
     <ClCompile Include="cmdSamplePickTextDot.cpp" />

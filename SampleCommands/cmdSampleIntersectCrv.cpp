@@ -42,15 +42,23 @@ CRhinoCommand::result CCommandSampleIntersectCrv::RunCommand( const CRhinoComman
   if( 0 == curveA || 0 == curveB )
     return CRhinoCommand::failure;
 
+  // Intersection tolerance
+  CRhinoGetNumber gn;
+  gn.SetCommandPrompt( L"Intersection tolerance" );
+  gn.SetDefaultNumber( context.m_doc.AbsoluteTolerance() );
+  gn.SetLowerLimit( 0.0, FALSE );
+  gn.GetNumber();
+  if( gn.CommandResult() != CRhinoCommand::success )
+    return go.CommandResult();
+
   // Calculate the intersection
-  double intersection_tolerance = 0.001;
-  double overlap_tolerance = 0.0;
+  double intersection_tolerance = gn.Number();
   ON_SimpleArray<ON_X_EVENT> events;
   int count = curveA->IntersectCurve(
         curveB, 
         events, 
         intersection_tolerance, 
-        overlap_tolerance
+        0.0
         );
 
   // Process the results
@@ -67,6 +75,7 @@ CRhinoCommand::result CCommandSampleIntersectCrv::RunCommand( const CRhinoComman
         context.m_doc.AddCurveObject( ON_Line(e.m_A[0], e.m_B[0]) );
       }
     }
+
     context.m_doc.Redraw();
   }
   

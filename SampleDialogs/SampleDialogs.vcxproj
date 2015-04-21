@@ -287,6 +287,7 @@
     <ClCompile Include="cmdSampleModalDialog.cpp" />
     <ClCompile Include="cmdSampleCirclePreview.cpp" />
     <ClCompile Include="cmdSampleModelessDialog.cpp" />
+    <ClCompile Include="cmdSampleOptionsDialog.cpp" />
     <ClCompile Include="cmdSampleSelectFiles.cpp" />
     <ClCompile Include="SampleBlockViewDialog.cpp" />
     <ClCompile Include="SampleDialogsApp.cpp" />
@@ -294,6 +295,7 @@
     <ClCompile Include="SampleModalDialog.cpp" />
     <ClCompile Include="SampleCirclePreviewDialog.cpp" />
     <ClCompile Include="SampleModelessDialog.cpp" />
+    <ClCompile Include="SampleOptionsListCtrlDlg.cpp" />
     <ClCompile Include="SamplePickObjectsDialog.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -312,6 +314,7 @@
     <ClInclude Include="SampleModalDialog.h" />
     <ClInclude Include="SampleCirclePreviewDialog.h" />
     <ClInclude Include="SampleModelessDialog.h" />
+    <ClInclude Include="SampleOptionsListCtrlDlg.h" />
     <ClInclude Include="SamplePickObjectsDialog.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

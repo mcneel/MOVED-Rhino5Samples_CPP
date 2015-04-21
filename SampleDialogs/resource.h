@@ -23,6 +23,9 @@
 #define IDC_BUTTON1                     19003
 #define IDC_BUTTON2                     19004
 #define IDC_BUTTON3                     19005
+#define IDD_DIALOG                      29002
+#define IDD_OPTIONS_DIALOG              29002
+#define IDC_FRAME                       29006
 
 // Next default values for new objects
 // 

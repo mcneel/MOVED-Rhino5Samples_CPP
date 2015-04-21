@@ -361,6 +361,7 @@
     <ClCompile Include="cmdSampleMeshBoundary.cpp" />
     <ClCompile Include="cmdSampleMeshDir.cpp" />
     <ClCompile Include="cmdSampleMeshLine.cpp" />
+    <ClCompile Include="cmdSampleMeshOutline.cpp" />
     <ClCompile Include="cmdSampleMeshPolysrf.cpp" />
     <ClCompile Include="cmdSampleMeshVertexLocation.cpp" />
     <ClCompile Include="cmdSampleMeshVolume.cpp" />

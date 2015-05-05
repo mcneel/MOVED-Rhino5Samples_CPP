@@ -447,6 +447,12 @@
     <ClCompile Include="cmdSampleMeshOutline.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cmdSamplePlaceCameraTarget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdSampleRotateView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleCommandsApp.h">

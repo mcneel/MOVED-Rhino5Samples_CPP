@@ -380,6 +380,7 @@
     <ClCompile Include="cmdSamplePickColor.cpp" />
     <ClCompile Include="cmdSamplePickTextDot.cpp" />
     <ClCompile Include="cmdSamplePipe.cpp" />
+    <ClCompile Include="cmdSamplePlaceCameraTarget.cpp" />
     <ClCompile Include="cmdSamplePointOnFace.cpp" />
     <ClCompile Include="cmdSamplePointsDeviation.cpp" />
     <ClCompile Include="cmdSamplePolyline.cpp" />
@@ -391,6 +392,7 @@
     <ClCompile Include="cmdSampleQueryDiameterDimension.cpp" />
     <ClCompile Include="cmdSampleRayShooter.cpp" />
     <ClCompile Include="cmdSampleRotateCenter.cpp" />
+    <ClCompile Include="cmdSampleRotateView.cpp" />
     <ClCompile Include="cmdSampleSave3DS.cpp" />
     <ClCompile Include="cmdSampleScripter.cpp" />
     <ClCompile Include="cmdSampleSection.cpp" />

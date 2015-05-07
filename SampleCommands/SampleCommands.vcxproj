@@ -261,6 +261,7 @@
       <PreprocessorDefinitions>WIN64;_WINDOWS;NDEBUG;_USRDLL;RHINO_DEBUG_PLUGIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -391,6 +392,9 @@
     <ClCompile Include="cmdSamplePurgeGroups.cpp" />
     <ClCompile Include="cmdSampleQueryDiameterDimension.cpp" />
     <ClCompile Include="cmdSampleRayShooter.cpp" />
+    <ClCompile Include="cmdSampleReduceMesh.cpp">
+      <OpenMPSupport Condition="'$(Configuration)|$(Platform)'=='PseudoDebug|x64'">true</OpenMPSupport>
+    </ClCompile>
     <ClCompile Include="cmdSampleRotateCenter.cpp" />
     <ClCompile Include="cmdSampleRotateView.cpp" />
     <ClCompile Include="cmdSampleSave3DS.cpp" />

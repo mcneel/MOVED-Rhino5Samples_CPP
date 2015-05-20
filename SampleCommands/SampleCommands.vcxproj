@@ -429,6 +429,7 @@
     <ClCompile Include="cmdSampleViewLock.cpp" />
     <ClCompile Include="cmdSampleVolume.cpp" />
     <ClCompile Include="cmdSampleZoomWindow.cpp" />
+    <ClCompile Include="cmdSampleSelectVisibleMeshFaces.cpp" />
     <ClCompile Include="SampleCommandsApp.cpp" />
     <ClCompile Include="SampleCommandsPlugIn.cpp" />
     <ClCompile Include="cmdSampleDumpEdgeCurves.cpp" />

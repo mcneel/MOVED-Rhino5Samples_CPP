@@ -7,8 +7,6 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Debug|x64 = Debug|x64
-		InternalDebug|Win32 = InternalDebug|Win32
-		InternalDebug|x64 = InternalDebug|x64
 		PseudoDebug|Win32 = PseudoDebug|Win32
 		PseudoDebug|x64 = PseudoDebug|x64
 		Release|Win32 = Release|Win32
@@ -19,10 +17,6 @@ Global
 		{702A8DAD-BFBA-4A45-A1A9-AAACE4AFDFF7}.Debug|Win32.Build.0 = Debug|Win32
 		{702A8DAD-BFBA-4A45-A1A9-AAACE4AFDFF7}.Debug|x64.ActiveCfg = Debug|x64
 		{702A8DAD-BFBA-4A45-A1A9-AAACE4AFDFF7}.Debug|x64.Build.0 = Debug|x64
-		{702A8DAD-BFBA-4A45-A1A9-AAACE4AFDFF7}.InternalDebug|Win32.ActiveCfg = InternalDebug|Win32
-		{702A8DAD-BFBA-4A45-A1A9-AAACE4AFDFF7}.InternalDebug|Win32.Build.0 = InternalDebug|Win32
-		{702A8DAD-BFBA-4A45-A1A9-AAACE4AFDFF7}.InternalDebug|x64.ActiveCfg = InternalDebug|x64
-		{702A8DAD-BFBA-4A45-A1A9-AAACE4AFDFF7}.InternalDebug|x64.Build.0 = InternalDebug|x64
 		{702A8DAD-BFBA-4A45-A1A9-AAACE4AFDFF7}.PseudoDebug|Win32.ActiveCfg = PseudoDebug|Win32
 		{702A8DAD-BFBA-4A45-A1A9-AAACE4AFDFF7}.PseudoDebug|Win32.Build.0 = PseudoDebug|Win32
 		{702A8DAD-BFBA-4A45-A1A9-AAACE4AFDFF7}.PseudoDebug|x64.ActiveCfg = PseudoDebug|x64

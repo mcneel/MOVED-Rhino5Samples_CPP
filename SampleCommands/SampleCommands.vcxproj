@@ -294,6 +294,7 @@
     <ClCompile Include="cmdSampleAutomateGrasshopper.cpp" />
     <ClCompile Include="cmdSampleBackgroundBitmap.cpp" />
     <ClCompile Include="cmdSampleBend.cpp" />
+    <ClCompile Include="cmdSampleBlendCurve.cpp" />
     <ClCompile Include="cmdSampleBooleanUnion.cpp" />
     <ClCompile Include="cmdSampleBoundingBox.cpp" />
     <ClCompile Include="cmdSampleBrepBoxWithMesh.cpp" />

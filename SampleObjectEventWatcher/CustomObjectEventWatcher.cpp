@@ -41,3 +41,13 @@ void CCustomObjectEventWatcher::OnUnDeleteObject(
 	RhinoApp().Print( L"Event watcher caught OnUnDeleteObject\n" );
 	// This is a good place perform any logic that you see necessary in your plug-in
 }
+
+void CCustomObjectEventWatcher::OnModifyObjectAttributes(
+    CRhinoDoc& doc, 
+    CRhinoObject& object, 
+    const CRhinoObjectAttributes& old_attributes
+    )
+{
+	RhinoApp().Print( L"Event watcher caught OnModifyObjectAttributes\n" );
+	// This is a good place perform any logic that you see necessary in your plug-in
+}

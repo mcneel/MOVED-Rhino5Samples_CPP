@@ -312,6 +312,7 @@
     <ClCompile Include="cmdSampleCylinder.cpp" />
     <ClCompile Include="cmdSampleDimAngular.cpp" />
     <ClCompile Include="cmdSampleDimAngular2.cpp" />
+    <ClCompile Include="cmdSampleDimAngular3.cpp" />
     <ClCompile Include="cmdSampleDimensionHelpers.cpp" />
     <ClCompile Include="cmdSampleDimLinear.cpp" />
     <ClCompile Include="cmdSampleDimLinear2.cpp" />

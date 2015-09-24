@@ -471,6 +471,9 @@
     <ClCompile Include="cmdSampleDimAngular3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cmdSamplePatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleCommandsApp.h">

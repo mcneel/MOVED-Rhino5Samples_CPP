@@ -390,6 +390,7 @@
     <ClCompile Include="cmdSamplePickTextDot.cpp" />
     <ClCompile Include="cmdSamplePipe.cpp" />
     <ClCompile Include="cmdSamplePlaceCameraTarget.cpp" />
+    <ClCompile Include="cmdSamplePlanarFaceLoops.cpp" />
     <ClCompile Include="cmdSamplePointOnFace.cpp" />
     <ClCompile Include="cmdSamplePointsDeviation.cpp" />
     <ClCompile Include="cmdSamplePolyline.cpp" />

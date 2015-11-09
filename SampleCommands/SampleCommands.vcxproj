@@ -434,6 +434,7 @@
     <ClCompile Include="cmdSampleTruncatedCone.cpp" />
     <ClCompile Include="cmdSampleUnrollSurface.cpp" />
     <ClCompile Include="cmdSampleUserStrings.cpp" />
+    <ClCompile Include="cmdSampleUserText.cpp" />
     <ClCompile Include="cmdSampleUVMesh.cpp" />
     <ClCompile Include="cmdSampleViewCaptureToFile.cpp" />
     <ClCompile Include="cmdSampleViewLock.cpp" />

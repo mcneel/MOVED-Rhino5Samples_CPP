@@ -336,18 +336,18 @@ static ON_Brep* MakeTrimmedPlane( ON_TextLog& error_log )
 class CCommandSampleTrimmedPlane : public CRhinoCommand
 {
 public:
-	CCommandSampleTrimmedPlane() {}
-	~CCommandSampleTrimmedPlane() {}
-	UUID CommandUUID()
-	{
-		// {A74D1534-29D7-4B14-A9FD-B3C679839D74}
-		static const GUID SampleTrimmedPlaneCommand_UUID =
-		{ 0xA74D1534, 0x29D7, 0x4B14, { 0xA9, 0xFD, 0xB3, 0xC6, 0x79, 0x83, 0x9D, 0x74 } };
-		return SampleTrimmedPlaneCommand_UUID;
-	}
-	const wchar_t* EnglishCommandName() { return L"SampleTrimmedPlane"; }
-	const wchar_t* LocalCommandName() { return L"SampleTrimmedPlane"; }
-	CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
+  CCommandSampleTrimmedPlane() {}
+  ~CCommandSampleTrimmedPlane() {}
+  UUID CommandUUID()
+  {
+    // {A74D1534-29D7-4B14-A9FD-B3C679839D74}
+    static const GUID SampleTrimmedPlaneCommand_UUID =
+    { 0xA74D1534, 0x29D7, 0x4B14, { 0xA9, 0xFD, 0xB3, 0xC6, 0x79, 0x83, 0x9D, 0x74 } };
+    return SampleTrimmedPlaneCommand_UUID;
+  }
+  const wchar_t* EnglishCommandName() { return L"SampleTrimmedPlane"; }
+  const wchar_t* LocalCommandName() { return L"SampleTrimmedPlane"; }
+  CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
 };
 
 // The one and only CCommandSampleTrimmedPlane object
@@ -360,14 +360,11 @@ CRhinoCommand::result CCommandSampleTrimmedPlane::RunCommand( const CRhinoComman
   if( 0 == brep )
 		return CRhinoCommand::failure;
 
-	context.m_doc.AddBrepObject( *brep );
-
-	// Since a copy of the brep is added to document, we need to delete the brep
-	delete brep;
-	brep = 0;
-
-	context.m_doc.Redraw();	
-  
+  CRhinoBrepObject* brep_object = new CRhinoBrepObject();
+  brep_object->SetBrep( brep );
+  context.m_doc.AddObject( brep_object );
+  context.m_doc.Redraw();	
+ 
   return CRhinoCommand::success;
 }
 

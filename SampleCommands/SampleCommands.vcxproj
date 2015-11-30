@@ -344,6 +344,7 @@
     <ClCompile Include="cmdSampleExtractIsoCurve.cpp" />
     <ClCompile Include="cmdSampleExtrudeTapered.cpp" />
     <ClCompile Include="cmdSampleExtrusionBox.cpp" />
+    <ClCompile Include="cmdSampleFaceWithHole.cpp" />
     <ClCompile Include="cmdSampleFindCrvsOnSrf.cpp" />
     <ClCompile Include="cmdSampleGetFaceTriangles.cpp" />
     <ClCompile Include="cmdSampleGetPointOnMesh.cpp" />
@@ -432,7 +433,9 @@
     <ClCompile Include="cmdSampleTexture.cpp" />
     <ClCompile Include="cmdSampleToggleLayer.cpp" />
     <ClCompile Include="cmdSampleTriangulatePolygon.cpp" />
+    <ClCompile Include="cmdSampleTrimmedPlane.cpp" />
     <ClCompile Include="cmdSampleTruncatedCone.cpp" />
+    <ClCompile Include="cmdSampleTwistedCube.cpp" />
     <ClCompile Include="cmdSampleUnrollSurface.cpp" />
     <ClCompile Include="cmdSampleUserStrings.cpp" />
     <ClCompile Include="cmdSampleUserText.cpp" />

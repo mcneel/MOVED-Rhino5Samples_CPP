@@ -514,18 +514,18 @@ static ON_Brep* MakeBrepFace( ON_TextLog& error_log )
 class CCommandSampleFaceWithHole : public CRhinoCommand
 {
 public:
-	CCommandSampleFaceWithHole() {}
-	~CCommandSampleFaceWithHole() {}
-	UUID CommandUUID()
-	{
-		// {547C8FAF-6A01-4B80-BBF2-CB4D33D0E2D6}
-		static const GUID SampleFaceWithHoleCommand_UUID =
-		{ 0x547C8FAF, 0x6A01, 0x4B80, { 0xBB, 0xF2, 0xCB, 0x4D, 0x33, 0xD0, 0xE2, 0xD6 } };
-		return SampleFaceWithHoleCommand_UUID;
-	}
-	const wchar_t* EnglishCommandName() { return L"SampleFaceWithHole"; }
-	const wchar_t* LocalCommandName() { return L"SampleFaceWithHole"; }
-	CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
+  CCommandSampleFaceWithHole() {}
+  ~CCommandSampleFaceWithHole() {}
+  UUID CommandUUID()
+  {
+    // {547C8FAF-6A01-4B80-BBF2-CB4D33D0E2D6}
+    static const GUID SampleFaceWithHoleCommand_UUID =
+    { 0x547C8FAF, 0x6A01, 0x4B80, { 0xBB, 0xF2, 0xCB, 0x4D, 0x33, 0xD0, 0xE2, 0xD6 } };
+    return SampleFaceWithHoleCommand_UUID;
+  }
+  const wchar_t* EnglishCommandName() { return L"SampleFaceWithHole"; }
+  const wchar_t* LocalCommandName() { return L"SampleFaceWithHole"; }
+  CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
 };
 
 // The one and only CCommandSampleFaceWithHole object
@@ -533,18 +533,15 @@ static class CCommandSampleFaceWithHole theSampleFaceWithHoleCommand;
 
 CRhinoCommand::result CCommandSampleFaceWithHole::RunCommand( const CRhinoCommandContext& context )
 {
-	ON_TextLog error_log;
+  ON_TextLog error_log;
   ON_Brep* brep = MakeBrepFace( error_log );
   if( 0 == brep )
-		return CRhinoCommand::failure;
+    return CRhinoCommand::failure;
 
-	context.m_doc.AddBrepObject( *brep );
-
-	// Since a copy of the brep is added to document, we need to delete the brep
-	delete brep;
-	brep = 0;
-
-	context.m_doc.Redraw();	
+  CRhinoBrepObject* brep_object = new CRhinoBrepObject();
+  brep_object->SetBrep( brep );
+  context.m_doc.AddObject( brep_object );
+  context.m_doc.Redraw();	
   
   return CRhinoCommand::success;
 }

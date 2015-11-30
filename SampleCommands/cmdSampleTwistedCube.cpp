@@ -606,18 +606,18 @@ static ON_Brep* MakeTwistedCube( ON_TextLog& error_log )
 class CCommandcmdSampleTwistedCube : public CRhinoCommand
 {
 public:
-	CCommandcmdSampleTwistedCube() {}
-	~CCommandcmdSampleTwistedCube() {}
-	UUID CommandUUID()
-	{
-		// {AFD8D548-8B70-437F-9BF2-F1F51AD4B231}
-		static const GUID cmdSampleTwistedCubeCommand_UUID =
-		{ 0xAFD8D548, 0x8B70, 0x437F, { 0x9B, 0xF2, 0xF1, 0xF5, 0x1A, 0xD4, 0xB2, 0x31 } };
-		return cmdSampleTwistedCubeCommand_UUID;
-	}
-	const wchar_t* EnglishCommandName() { return L"cmdSampleTwistedCube"; }
-	const wchar_t* LocalCommandName() { return L"cmdSampleTwistedCube"; }
-	CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
+  CCommandcmdSampleTwistedCube() {}
+  ~CCommandcmdSampleTwistedCube() {}
+  UUID CommandUUID()
+  {
+    // {AFD8D548-8B70-437F-9BF2-F1F51AD4B231}
+    static const GUID cmdSampleTwistedCubeCommand_UUID =
+    { 0xAFD8D548, 0x8B70, 0x437F, { 0x9B, 0xF2, 0xF1, 0xF5, 0x1A, 0xD4, 0xB2, 0x31 } };
+    return cmdSampleTwistedCubeCommand_UUID;
+  }
+  const wchar_t* EnglishCommandName() { return L"cmdSampleTwistedCube"; }
+  const wchar_t* LocalCommandName() { return L"cmdSampleTwistedCube"; }
+  CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
 };
 
 // The one and only CCommandcmdSampleTwistedCube object
@@ -628,15 +628,12 @@ CRhinoCommand::result CCommandcmdSampleTwistedCube::RunCommand( const CRhinoComm
   ON_TextLog error_log;
   ON_Brep* brep = MakeTwistedCube( error_log );
   if( 0 == brep )
-		return CRhinoCommand::failure;
+    return CRhinoCommand::failure;
   
-	context.m_doc.AddBrepObject( *brep );
-
-	// Since a copy of the brep is added to document, we need to delete the brep
-	delete brep;
-	brep = 0;
-
-	context.m_doc.Redraw();	
+  CRhinoBrepObject* brep_object = new CRhinoBrepObject();
+  brep_object->SetBrep( brep );
+  context.m_doc.AddObject( brep_object );
+  context.m_doc.Redraw();	
 
   return CRhinoCommand::success;
 }

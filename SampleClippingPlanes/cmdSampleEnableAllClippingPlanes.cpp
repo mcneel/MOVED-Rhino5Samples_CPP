@@ -13,18 +13,18 @@
 class CCommandSampleEnableAllClippingPlanes : public CRhinoCommand
 {
 public:
-	CCommandSampleEnableAllClippingPlanes() {}
-	~CCommandSampleEnableAllClippingPlanes() {}
-	UUID CommandUUID()
-	{
-		// {A8A4E5B7-8D0-49E3-933E-1DA58132FB56}
-		static const GUID SampleEnableAllClippingPlanesCommand_UUID =
-		{ 0xA8A4E5B7, 0x8D0, 0x49E3, { 0x93, 0x3E, 0x1D, 0xA5, 0x81, 0x32, 0xFB, 0x56 } };
-		return SampleEnableAllClippingPlanesCommand_UUID;
-	}
-	const wchar_t* EnglishCommandName() { return L"SampleEnableAllClippingPlanes"; }
-	const wchar_t* LocalCommandName() const { return L"SampleEnableAllClippingPlanes"; }
-	CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
+  CCommandSampleEnableAllClippingPlanes() {}
+  ~CCommandSampleEnableAllClippingPlanes() {}
+  UUID CommandUUID()
+  {
+    // {A8A4E5B7-8D0-49E3-933E-1DA58132FB56}
+    static const GUID SampleEnableAllClippingPlanesCommand_UUID =
+    { 0xA8A4E5B7, 0x8D0, 0x49E3, { 0x93, 0x3E, 0x1D, 0xA5, 0x81, 0x32, 0xFB, 0x56 } };
+    return SampleEnableAllClippingPlanesCommand_UUID;
+  }
+  const wchar_t* EnglishCommandName() { return L"SampleEnableAllClippingPlanes"; }
+  const wchar_t* LocalCommandName() const { return L"SampleEnableAllClippingPlanes"; }
+  CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
 };
 
 // The one and only CCommandSampleEnableAllClippingPlanes object
@@ -32,7 +32,7 @@ static class CCommandSampleEnableAllClippingPlanes theSampleEnableAllClippingPla
 
 CRhinoCommand::result CCommandSampleEnableAllClippingPlanes::RunCommand( const CRhinoCommandContext& context )
 {
-  CRhinoObjectIterator it( CRhinoObjectIterator::undeleted_objects, CRhinoObjectIterator::active_and_reference_objects );
+  CRhinoObjectIterator it( CRhinoObjectIterator::undeleted_objects, CRhinoObjectIterator::active_objects );
   it.SetObjectFilter( ON::clipplane_object );
   
   int num_enabled = 0;
@@ -59,7 +59,7 @@ CRhinoCommand::result CCommandSampleEnableAllClippingPlanes::RunCommand( const C
     context.m_doc.Redraw();
   }
 
-	return CRhinoCommand::success;
+  return CRhinoCommand::success;
 }
 
 #pragma endregion

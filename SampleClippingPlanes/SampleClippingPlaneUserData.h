@@ -4,10 +4,10 @@ class CSampleClippingPlaneUserData : public ON_UserData
 {
   // Opennurbs classes that are saved in .3dm files require
   // an ON_OBJECT_DECLARE call in their declaration.
-	ON_OBJECT_DECLARE( CSampleClippingPlaneUserData );
+  ON_OBJECT_DECLARE( CSampleClippingPlaneUserData );
 
 public:
-	CSampleClippingPlaneUserData();
+  CSampleClippingPlaneUserData();
   ~CSampleClippingPlaneUserData();
 
   /*
@@ -22,8 +22,8 @@ public:
     operator= because this is a task that trips up
     many people that attempt to implement them.
   */
-	CSampleClippingPlaneUserData( const CSampleClippingPlaneUserData& src );
-	CSampleClippingPlaneUserData& operator=( const CSampleClippingPlaneUserData& src );
+  CSampleClippingPlaneUserData( const CSampleClippingPlaneUserData& src );
+  CSampleClippingPlaneUserData& operator=( const CSampleClippingPlaneUserData& src );
 
   /*
   Returns:
@@ -36,16 +36,16 @@ public:
   static ON_UUID PlugInId();
 
   // override virtual ON_UserData::GetDescription()
-	BOOL GetDescription( ON_wString& description );
+  BOOL GetDescription( ON_wString& description );
 
   // override virtual ON_UserData::Archive()
   BOOL Archive() const; 
 
   // override virtual ON_UserData::Read()
-	BOOL Read( ON_BinaryArchive& archive );
+  BOOL Read( ON_BinaryArchive& archive );
 
   // override virtual ON_UserData::Write()
-	BOOL Write( ON_BinaryArchive& archive ) const;
+  BOOL Write( ON_BinaryArchive& archive ) const;
 
 public:
   // Static helper functions

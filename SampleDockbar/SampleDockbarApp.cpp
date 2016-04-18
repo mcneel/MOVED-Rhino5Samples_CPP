@@ -61,9 +61,7 @@ BOOL CSampleDockbarApp::InitInstance()
   //   Only standard MFC DLL instance initialization belongs here. 
   //   All other significant initialization should take place in
   //   CSampleDockbarPlugIn::OnLoadPlugIn().
-
 	CWinApp::InitInstance();
-
 	return TRUE;
 }
 

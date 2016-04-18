@@ -5,7 +5,7 @@
 #include "stdafx.h"
 #include "SampleRhinoDockbar.h"
 
-IMPLEMENT_SERIAL( CSampleRhinoDockbar, CRhinoUiDockBar, 1 )
+IMPLEMENT_SERIAL(CSampleRhinoDockbar, CRhinoUiDockBar, 1)
 
 CSampleRhinoDockbar::CSampleRhinoDockbar()
 {
@@ -26,7 +26,7 @@ UUID CSampleRhinoDockbar::DockBarID() const
 	return SampleRhinoDockbar_UUID;
 }
 
-const wchar_t* CSampleRhinoDockbar::DockBarName( int language_id )  const
+const wchar_t* CSampleRhinoDockbar::DockBarName(int language_id)  const
 {
 	return L"Sample";
 }

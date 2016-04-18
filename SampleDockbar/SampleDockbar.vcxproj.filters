@@ -33,6 +33,9 @@
     <ClCompile Include="SampleRhinoDockbarDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SampleDialogScrollHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleDockbarApp.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SampleRhinoDockbarDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleDialogScrollHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

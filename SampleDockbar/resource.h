@@ -4,6 +4,7 @@
 //
 #define IDD_DIALOG1                     2000
 #define IDC_BUTTON1                     2000
+#define IDC_BUTTON2                     2001
 
 // Next default values for new objects
 // 

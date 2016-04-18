@@ -283,6 +283,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cmdSampleDockbar.cpp" />
+    <ClCompile Include="SampleDialogScrollHelper.cpp" />
     <ClCompile Include="SampleDockbarApp.cpp" />
     <ClCompile Include="SampleDockbarPlugIn.cpp" />
     <ClCompile Include="SampleRhinoDockbar.cpp" />
@@ -298,6 +299,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SampleDialogScrollHelper.h" />
     <ClInclude Include="SampleDockbarApp.h" />
     <ClInclude Include="SampleDockbarPlugIn.h" />
     <ClInclude Include="SampleRhinoDockbar.h" />

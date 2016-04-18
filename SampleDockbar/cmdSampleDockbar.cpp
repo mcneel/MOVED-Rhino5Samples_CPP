@@ -26,16 +26,16 @@ public:
   }
   const wchar_t* EnglishCommandName() { return L"SampleDockbar"; }
   const wchar_t* LocalCommandName() const { return L"SampleDockbar"; }
-  CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
+  CRhinoCommand::result RunCommand(const CRhinoCommandContext&);
 };
 
 // The one and only CCommandSampleDockbar object
 static class CCommandSampleDockbar theSampleDockbarCommand;
 
-CRhinoCommand::result CCommandSampleDockbar::RunCommand( const CRhinoCommandContext& context )
+CRhinoCommand::result CCommandSampleDockbar::RunCommand(const CRhinoCommandContext& context)
 {
 	// Ask Rhino's DockBarManager to show our dockbar
-	bool rc = RhinoUiDockBarManager().ShowDockBar( CSampleRhinoDockbar().DockBarID(), true, false );
+	bool rc = RhinoUiDockBarManager().ShowDockBar(CSampleRhinoDockbar().DockBarID(), true, false);
 
   return CRhinoCommand::success;
 }

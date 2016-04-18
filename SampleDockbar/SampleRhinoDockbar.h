@@ -10,7 +10,7 @@
 
 class CSampleRhinoDockbar : public CRhinoUiDockBar
 {
-	DECLARE_SERIAL( CSampleRhinoDockbar )
+	DECLARE_SERIAL(CSampleRhinoDockbar)
 
 public:
 	CSampleRhinoDockbar();
@@ -18,7 +18,7 @@ public:
 
   // Required overrides
 	UUID DockBarID() const;
-	const wchar_t* DockBarName( int language_id = 1033 ) const;
+	const wchar_t* DockBarName(int language_id = 1033) const;
 
 protected:
 	bool CreateDockBarControls();

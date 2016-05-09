@@ -303,6 +303,7 @@
     <ClCompile Include="cmdSampleBoundingBox.cpp" />
     <ClCompile Include="cmdSampleBrepBoxWithMesh.cpp" />
     <ClCompile Include="cmdSampleCageEdit.cpp" />
+    <ClCompile Include="cmdSampleCaptureFrameBuffer.cpp" />
     <ClCompile Include="cmdSampleCircle.cpp" />
     <ClCompile Include="cmdSampleClassifyCurve.cpp" />
     <ClCompile Include="cmdSampleClosestAxisPoint.cpp" />

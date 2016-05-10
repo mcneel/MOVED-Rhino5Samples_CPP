@@ -498,7 +498,7 @@
     <ClCompile Include="cmdSampleTwistedCube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cmdSampleOrientOnMesh.cpp">
+    <ClCompile Include="cmdSampleCaptureFrameBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

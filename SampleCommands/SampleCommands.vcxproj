@@ -385,6 +385,7 @@
     <ClCompile Include="cmdSampleOffsetCurve.cpp" />
     <ClCompile Include="cmdSampleOpenIges.cpp" />
     <ClCompile Include="cmdSampleOrientOnCrv.cpp" />
+    <ClCompile Include="cmdSampleOrientOnMesh.cpp" />
     <ClCompile Include="cmdSampleOrientOnSrf.cpp" />
     <ClCompile Include="cmdSamplePan.cpp" />
     <ClCompile Include="cmdSamplePatch.cpp" />

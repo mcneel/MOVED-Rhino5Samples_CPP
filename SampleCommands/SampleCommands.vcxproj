@@ -333,6 +333,7 @@
     <ClCompile Include="cmdSampleDupBorder.cpp" />
     <ClCompile Include="cmdSampleDupMeshBorder.cpp" />
     <ClCompile Include="cmdSampleElevation.cpp" />
+    <ClCompile Include="cmdSampleEnumFonts.cpp" />
     <ClCompile Include="cmdSampleEvaluateCurve.cpp" />
     <ClCompile Include="cmdSampleExplodeBrep.cpp" />
     <ClCompile Include="cmdSampleExplodePointCloud.cpp" />

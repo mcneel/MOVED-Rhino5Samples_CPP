@@ -139,12 +139,12 @@ bool CSampleViewportDecorationConduit::ExecConduit( CRhinoDisplayPipeline& dp, U
 
       // Draw text
       if( 0 == m_font_faces.Count() )
-        dp.DrawString( str, str_len, color, point, false, 0, 12, m_default_font_face );
+        dp.DrawString( str, str_len, color, point, bMiddle, rotation, height, m_default_font_face );
       else
       {
         for (int i = 0; i < m_font_faces.Count(); i++ )
         {
-          dp.DrawString( str, str_len, color, point, false, 0, 12, m_font_faces[i] );
+          dp.DrawString( str, str_len, color, point, bMiddle, rotation, height, m_font_faces[i] );
           point.y -= 20.0;
         }
       }

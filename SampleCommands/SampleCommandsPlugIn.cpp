@@ -3,6 +3,10 @@
 //
 
 #include "StdAfx.h"
+
+// 28-Jun-2016 Dale Fugier, V6 SDK Port
+#include "C:\Program Files\Rhino 6.0 SDK\Inc\rhinoSdkPlugInDeclare.h"
+
 #include "SampleCommandsPlugIn.h"
 
 // The plug-in object must be constructed before any plug-in classes

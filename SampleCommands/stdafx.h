@@ -9,8 +9,13 @@
 #define VC_EXTRALEAN		      // Exclude rarely-used stuff from Windows headers
 #endif
 
+// 28-Jun-2016 Dale Fugier, V6 SDK Port
+// This plug-in is Rhino 6 ready
+#define RHINO_V6_READY
+
 // Disable warning C4100: 'identifier' : unreferenced formal parameter
-#pragma warning( disable:4100 )
+// 28-Jun-2016 Dale Fugier, V6 SDK Port
+#pragma warning(disable:4100)
 
 // Rhino plug-ins must always use the release MFC that Rhino uses.
 // Rhino plug-ins that require debugging information need to be built
@@ -22,7 +27,9 @@
 #endif
 
 // Rhino SDK Preamble
-#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhinoSdkStdafxPreamble.h"
+// 28-Jun-2016 Dale Fugier, V6 SDK Port
+//#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhinoSdkStdafxPreamble.h"
+#include "C:\Program Files\Rhino 6.0 SDK\Inc\RhinoSdkStdafxPreamble.h"
 
 #define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS	// some CString constructors will be explicit
 
@@ -63,10 +70,14 @@
 #endif
 
 // Rhino Plug-in
-#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhinoSdk.h"
+// 28-Jun-2016 Dale Fugier, V6 SDK Port
+//#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhinoSdk.h"
+#include "C:\Program Files\Rhino 6.0 SDK\Inc\RhinoSdk.h" 
 
 // Render Development Kit.
-#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhRdkHeaders.h"
+// 28-Jun-2016 Dale Fugier, V6 SDK Port
+//#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhRdkHeaders.h"
+#include "C:\Program Files\Rhino 6.0 SDK\Inc\RhRdkHeaders.h" 
 
 #if defined(RHINO_DEBUG_PLUGIN)
 // Now that all the system headers are read, we can
@@ -76,5 +87,12 @@
 #endif
 
 // Rhino Plug-in Linking Pragmas
-#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\rhinoSdkPlugInLinkingPragmas.h"
+// 28-Jun-2016 Dale Fugier, V6 SDK Port
+//#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\rhinoSdkPlugInLinkingPragmas.h"
+#if defined(DEBUG)
+#define RHINO_LIB_DIR "C:/Program Files/Rhino 6.0 SDK/lib/Debug"
+#else
+#define RHINO_LIB_DIR "C:/Program Files/Rhino 6.0 SDK/lib/Release"
+#endif
+#include "C:\Program Files\Rhino 6.0 SDK\Inc\rhinoSdkPlugInLinkingPragmas.h"
 

@@ -59,7 +59,7 @@ CCommandSampleSetUserStrings::CCommandSampleSetUserStrings()
   m_prefixes.Append(L"fif");
   m_prefixes.Append(L"six");
   m_prefixes.Append(L"seven");
-  m_prefixes.Append(L"eigh");
+  m_prefixes.Append(L"eight");
   m_prefixes.Append(L"nine");
 }
 

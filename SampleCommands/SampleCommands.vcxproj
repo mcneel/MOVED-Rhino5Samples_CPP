@@ -357,6 +357,7 @@
     <ClCompile Include="cmdSampleHatch.cpp" />
     <ClCompile Include="cmdSampleIdleProcessor.cpp" />
     <ClCompile Include="cmdSampleImportEarthAnchor.cpp" />
+    <ClCompile Include="cmdSampleImportMeshes.cpp" />
     <ClCompile Include="cmdSampleInsert.cpp" />
     <ClCompile Include="cmdSampleIntepCrvOnSrf.cpp" />
     <ClCompile Include="cmdSampleInterpCurve.cpp" />

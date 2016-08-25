@@ -315,6 +315,7 @@
     <ClCompile Include="cmdSampleCurveTorsion.cpp" />
     <ClCompile Include="cmdSampleCustomMeshObjects.cpp" />
     <ClCompile Include="cmdSampleCustomRenderMesh.cpp" />
+    <ClCompile Include="cmdSampleCustomViewCapture.cpp" />
     <ClCompile Include="cmdSampleCylinder.cpp" />
     <ClCompile Include="cmdSampleDimAngular.cpp" />
     <ClCompile Include="cmdSampleDimAngular2.cpp" />

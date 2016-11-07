@@ -332,6 +332,7 @@
     <ClCompile Include="cmdSampleDumpBlockTree.cpp" />
     <ClCompile Include="cmdSampleDumpMaterialUserData.cpp" />
     <ClCompile Include="cmdSampleDumpModelObjectIds.cpp" />
+    <ClCompile Include="cmdSampleDumpObjectDisplayModes.cpp" />
     <ClCompile Include="cmdSampleDupBorder.cpp" />
     <ClCompile Include="cmdSampleDupMeshBorder.cpp" />
     <ClCompile Include="cmdSampleElevation.cpp" />
@@ -423,6 +424,7 @@
     <ClCompile Include="cmdSampleSelectPolylineSegment.cpp" />
     <ClCompile Include="cmdSampleSelectRegion.cpp" />
     <ClCompile Include="cmdSampleSelFilter.cpp" />
+    <ClCompile Include="cmdSampleSetObjectDisplayMode.cpp" />
     <ClCompile Include="cmdSampleShortPath.cpp" />
     <ClCompile Include="cmdSampleSphere.cpp" />
     <ClCompile Include="cmdSampleSplitBrep.cpp" />

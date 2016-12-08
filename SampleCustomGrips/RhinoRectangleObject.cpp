@@ -192,20 +192,28 @@ void CRhinoRectangleGrips::Reset()
 
 CRhinoObject* CRhinoRectangleGrips::NewObject()
 {
-  CRhinoRectangleObject* new_rectangle = 0;
   UpdateRectangle();
-  if( m_bGripsMoved && m_bDrawRectangle )
-  {
-    CRhinoRectangleObject* pOwnerObject = RectangleObject();
-    if( pOwnerObject )
-      new_rectangle = new CRhinoRectangleObject( *pOwnerObject );
-    else
-      new_rectangle = new CRhinoRectangleObject();
 
-    ON_PolylineCurve pline( m_rectangle );
-    new_rectangle->SetCurve( pline );
+  CRhinoRectangleObject* pNewObject = 0;
+  
+  if (m_bGripsMoved && m_bDrawRectangle)
+  {
+    CRhinoRectangleObject* pOldObject = RectangleObject();
+    if (pOldObject)
+      pNewObject = new CRhinoRectangleObject(*pOldObject);
+    else
+      pNewObject = new CRhinoRectangleObject();
+
+    ON_PolylineCurve rectangle_curve(m_rectangle);
+
+    // Copy any user data from the original curve to the new curve
+    if (pOldObject && pOldObject->Curve() && pOldObject->Curve()->FirstUserData())
+      rectangle_curve.CopyUserData(*pOldObject->Curve());
+
+    pNewObject->SetCurve(rectangle_curve);
   }
-  return new_rectangle;
+
+  return pNewObject;
 }
 
 void CRhinoRectangleGrips::Draw( CRhinoDrawGripsSettings& dgs )

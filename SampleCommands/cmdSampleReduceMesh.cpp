@@ -24,7 +24,7 @@ public:
   }
   const wchar_t* EnglishCommandName() { return L"SampleReduceMesh"; }
   const wchar_t* LocalCommandName() const { return L"SampleReduceMesh"; }
-  CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
+  CRhinoCommand::result RunCommand(const CRhinoCommandContext&);
 };
 
 // The one and only CCommandSampleReduceMesh object
@@ -40,7 +40,7 @@ public:
   }
 };
 
-CRhinoCommand::result CCommandSampleReduceMesh::RunCommand( const CRhinoCommandContext& context )
+CRhinoCommand::result CCommandSampleReduceMesh::RunCommand(const CRhinoCommandContext& context)
 {
   CRhinoGetObject go;
   go.SetCommandPrompt(L"Select meshes to reduce");
@@ -62,15 +62,15 @@ CRhinoCommand::result CCommandSampleReduceMesh::RunCommand( const CRhinoCommandC
   int num_threads = 0;
   omp_set_num_threads(max_num_threads);
 
-  #pragma omp parallel shared(meshes, num_threads)
+#pragma omp parallel shared(meshes, num_threads)
   {
-    #pragma omp master
+#pragma omp master
     num_threads = omp_get_num_threads();
 
-    #pragma omp for
+#pragma omp for
     for (int i = 0; i < object_count; i++)
-	  {
-		  if (0 != meshes[i])
+    {
+      if (0 != meshes[i])
       {
         ON_Mesh& mesh = *(meshes[i]);
         mesh.CullDegenerateFaces();
@@ -79,11 +79,11 @@ CRhinoCommand::result CCommandSampleReduceMesh::RunCommand( const CRhinoCommandC
           CSampleReduceMeshProgressContext progress;
           bool rc = RhinoReduceMesh(mesh, (int)(mesh.m_F.Count() * 0.5), true, 10, false, &progress);
           if (rc)
-			      mesh.ConvertTrianglesToQuads(5.0 * ON_PI / 180.0, 2.0);
+            mesh.ConvertTrianglesToQuads(5.0 * ON_PI / 180.0, 2.0);
         }
       }
     }
-	}
+  }
 
   for (int i = 0; i < object_count; i++)
   {

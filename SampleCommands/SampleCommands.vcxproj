@@ -415,6 +415,7 @@
     <ClCompile Include="cmdSampleReduceMesh.cpp">
       <OpenMPSupport Condition="'$(Configuration)|$(Platform)'=='PseudoDebug|x64'">true</OpenMPSupport>
     </ClCompile>
+    <ClCompile Include="cmdSampleReduceMesh2.cpp" />
     <ClCompile Include="cmdSampleRotateCenter.cpp" />
     <ClCompile Include="cmdSampleRotateView.cpp" />
     <ClCompile Include="cmdSampleSave3DS.cpp" />

@@ -1,6 +1,0 @@
-; SampleImportPoints.def : Declares the module parameters for the DLL.
-
-; LIBRARY      "SampleImportPoints"
-
-EXPORTS
-    ; Explicit exports can go here

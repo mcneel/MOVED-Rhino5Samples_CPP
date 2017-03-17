@@ -1,6 +1,0 @@
-; SpaceGizmo.def : Declares the module parameters for the DLL.
-
-; LIBRARY      "SpaceGizmo"
-
-EXPORTS
-    ; Explicit exports can go here
